@@ -1,0 +1,26 @@
+{
+  "name": "formoose",
+  "version": "1.0.0",
+  "description": "Mongoose like Schema based validation engine for React Hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romulobordezani/formoose.git"
+  },
+  "keywords": [
+    "mongoose",
+    "schema",
+    "form",
+    "validation",
+    "unified"
+  ],
+  "author": "romulobordezani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romulobordezani/formoose/issues"
+  },
+  "homepage": "https://github.com/romulobordezani/formoose#readme"
+}
