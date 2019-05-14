@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "es5",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+  "compileOnSave": true,
+  "include": [
+    "src/**/*.ts",
+    "node_modules/@types"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
