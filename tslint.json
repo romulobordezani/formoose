@@ -1,0 +1,13 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "ordered-imports": [false],
+    "max-classes-per-file": [false],
+    "variable-name": [false]
+  },
+  "linterOptions": {
+    "exclude": [
+      "webpack.*"
+    ]
+  }
+}

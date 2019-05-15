@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "description": "Mongoose like Schema based validation engine for React Hooks",
   "private": false,
+  "main": "dist/main.js",
   "engine": {
-    "node": "10.12.18"
+    "node": "10.12.18",
+    "npm": "6.4.1"
   },
   "scripts": {
-    "test": "npm run test",
-    "start": "webpack"
+    "test": "jest",
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -36,6 +39,11 @@
     "typescript": "^3.4.5",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "@types/jest": "^24.0.13",
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+
   }
 }
