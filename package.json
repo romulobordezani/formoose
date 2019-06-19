@@ -11,7 +11,8 @@
   "scripts": {
     "test": "jest",
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": ""
   },
   "repository": {
     "type": "git",

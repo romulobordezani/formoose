@@ -20,7 +20,7 @@
   },
   "compileOnSave": true,
   "include": [
-    "src/**/*.ts",
+    "src/**/*",
     "node_modules/@types"
   ],
   "exclude": [

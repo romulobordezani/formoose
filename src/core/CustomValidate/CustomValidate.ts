@@ -1,7 +1,7 @@
-import { matchValidate } from '../index';
+import { matchValidate } from '../../validators';
 
 /**
- * Custom Former
+ * Custom Index
  * @category Validators
  * @param {checkerData} checkerData
  */

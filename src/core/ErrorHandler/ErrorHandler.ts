@@ -12,7 +12,7 @@ class ErrorHandler {
    * @param {Object} translatedMessageLocals
    * @throws {CustomError}
    */
-  static throw(message: string, field?: string, translatedMessageId?: string, translatedMessageLocals = {}) {
+  public static throw(message: string, field?: string, translatedMessageId?: string, translatedMessageLocals = {}): never {
     throw new CustomError(message, field, translatedMessageId, translatedMessageLocals);
   }
 }
