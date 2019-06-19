@@ -1,5 +1,5 @@
-![Formoose](src/assets/Formoose.svg?raw=true)
+![Formoose](src/assets/Formoose-logo.svg?raw=true)
 
-Mongoose like Schema based validation engine for run time validations.
+A schema based validation engine, integrated with Mongoose, for run time validations.
 
 Work In Progress - Please, don't use it in production yet.
