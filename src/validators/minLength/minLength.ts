@@ -11,6 +11,7 @@ import { isString } from '../index';
  */
 function minLength(value, size, identifier) {
   const stringHelper = String(value);
+
   if (isString(value, identifier) && stringHelper.length < size) {
     ErrorHandler.throw(
       `String with length of ${

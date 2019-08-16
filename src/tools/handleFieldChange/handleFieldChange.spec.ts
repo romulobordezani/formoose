@@ -1,7 +1,7 @@
-import Formoose from '../index';
-import { formDataMock, eventMock, curryStateSetter } from '../../mocks';
+import FormooseTools from '../index';
+import { formDataMock, eventMock, curryStateSetter } from '../../__mocks__';
 
-describe('[ handleFieldChange - Index Util ]', () => {
+describe('[ TOOLS ][ handleFieldChange ]', () => {
   let formData;
 
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe('[ handleFieldChange - Index Util ]', () => {
   });
 
   it('Feed formData with values from Dom events', () => {
-    Formoose.handleFieldChange(eventMock, 'field1', curryStateSetter(formData));
-    expect(Formoose.getModel(formData, 'field1')).toEqual({ field1: 'mockedValue' });
+    FormooseTools.handleFieldChange(eventMock, 'field1', curryStateSetter(formData));
+    expect(FormooseTools.getModel(formData, 'field1')).toEqual({ field1: 'mockedValue' });
   });
 });

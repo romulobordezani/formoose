@@ -1,26 +1,28 @@
-import { omit } from 'lodash';
-import Formoose from '../index';
-import { curryStateSetter, formDataMock } from '../../mocks';
+import { getSimpleObject, mountFormData, setValue, validateAllFieldsSync } from '../index';
+import { curryStateSetter, schema} from '../../__mocks__';
 
-describe('[ Index Sync - Util ]', () => {
+describe('[ TOOLS ][ validateAllFieldsSync ]', () => {
+
   let formData;
+  let modelMock;
+  let validationResponse;
 
-  beforeEach(() => {
-    formData = omit(Object.assign({}, formDataMock), ['acceptedTerms']);
+  beforeEach(async () => {
+    formData = mountFormData(schema());
+    modelMock = getSimpleObject(formData);
+    validationResponse = null;
   });
 
-  it('Detects invalid Data on formData model for Users', async () => {
-    Formoose.updateFormDataValues(formData, omit(UserMock.getPhysician(), ['acceptedTerms']));
-    Formoose.setValue(curryStateSetter(formData), 'firstName', 123123123);
-    let validationResponse = null;
+  it('Detects invalid Data on formData and sets related messages and errors', async () => {
+    setValue(curryStateSetter(formData),'email', 'romulobordezani_gmail.com');
+    setValue(curryStateSetter(formData), 'firstName', 123123123);
+
     try {
-      validationResponse = await Formoose.validateAllFieldsSync(
-        UserValidate,
+      validationResponse = await validateAllFieldsSync(
+        schema(),
         formData,
         curryStateSetter(formData),
-        translatedMessageId => translatedMessageId,
-        true,
-        'Validate'
+        translatedMessageId => translatedMessageId
       );
     } catch (e) {
       expect(formData.firstName.error).toBeTruthy();
@@ -31,22 +33,24 @@ describe('[ Index Sync - Util ]', () => {
     }
   });
 
-  it('Let a good Model Pass', async () => {
-    const secondFormData = omit(Object.assign({}, UserFormData), ['acceptedTerms']);
-    Formoose.updateFormDataValues(secondFormData, omit(UserMock.getPhysician(), ['acceptedTerms']));
+  it('Lets a good Model Pass', async () => {
 
-    const validationResponse = await Formoose.validateAllFieldsSync(
-      UserValidate,
-      secondFormData,
-      curryStateSetter(secondFormData),
-      translatedMessageId => translatedMessageId,
-      true,
-      'Validate'
+    setValue(curryStateSetter(formData),'email', 'romulobordezani@gmail.com');
+    setValue(curryStateSetter(formData), 'firstName', 'Mojo');
+    setValue(curryStateSetter(formData), 'id', 'fakeId');
+    setValue(curryStateSetter(formData), 'lastName', 'Working');
+
+    validationResponse = await validateAllFieldsSync(
+      schema(),
+      formData,
+      curryStateSetter(formData),
+      translatedMessageId => translatedMessageId
     );
 
-    expect(secondFormData.firstName.error).toBeNull();
-    expect(secondFormData.firstName.message).toBeNull();
+    expect(formData.firstName.error).toBeNull();
+    expect(formData.firstName.message).toBeNull();
     expect(validationResponse).toBeTruthy();
     expect(validationResponse).not.toBeNull();
   });
+
 });

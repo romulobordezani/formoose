@@ -10,8 +10,9 @@ import getMaxLength from './getMaxLength/getMaxLength';
 import updateFormDataValues from './updateFormDataValues/updateFormDataValues';
 import getSimpleObject from './getSimpleObject/getSimpleObject';
 import getTrimmed from './getTrimmed/getTrimmed';
+import mountFormData from './mountFormData/mountFormData';
 
-class Formoose {
+class FormooseTools {
   public static cleanError = cleanError;
 
   public static setMessage = setMessage;
@@ -26,6 +27,8 @@ class Formoose {
 
   public static getMaxLength = getMaxLength;
 
+  public static mountFormData = mountFormData;
+
   public static updateFormDataValues = updateFormDataValues;
 
   public static getSimpleObject = getSimpleObject;
@@ -37,4 +40,20 @@ class Formoose {
   public static validateOneField = validateOneField;
 }
 
-export default Formoose;
+export default FormooseTools;
+
+export {
+  cleanError,
+  setMessage,
+  setError,
+  setValue,
+  handleFieldChange,
+  getModel,
+  getMaxLength,
+  mountFormData,
+  updateFormDataValues,
+  getSimpleObject,
+  getTrimmed,
+  validateAllFieldsSync,
+  validateOneField
+}

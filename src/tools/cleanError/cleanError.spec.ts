@@ -1,5 +1,5 @@
-import Formoose from '../index';
-import { formDataMock, curryStateSetter } from '../../mocks';
+import FormooseTools from '../index';
+import { formDataMock, curryStateSetter } from '../../__mocks__';
 
 describe('[ Clean Error - Index Util ]', () => {
   let formData;
@@ -9,13 +9,13 @@ describe('[ Clean Error - Index Util ]', () => {
   });
 
   it('Removes any error in a formData', () => {
-    Formoose.setError(
+    FormooseTools.setError(
       curryStateSetter(formData),
       'field1',
       { translatedMessageId: 'got an error' },
       () => null
     );
-    Formoose.cleanError(curryStateSetter(formData), 'field1');
+    FormooseTools.cleanError(curryStateSetter(formData), 'field1');
     expect(formData.field1.error).toBeNull();
   });
 });

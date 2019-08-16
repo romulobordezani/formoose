@@ -1,30 +1,37 @@
-import TypeEnum from '../../interfaces/Types.enum';
+import { ISchemaGetter, TypesEnum } from "../../interfaces";
 
-export default () => {
+const schema: ISchemaGetter = () => {
   return {
+
     email: {
       max: 50,
       required: true,
-      type: TypeEnum.String,
+      type: TypesEnum.String,
     },
+
     firstName: {
       max: 50,
       min: 2,
       required: true,
-      type: TypeEnum.String
+      type: TypesEnum.String
     },
+
     id: {
       required: true,
-      type: TypeEnum.String
+      type: TypesEnum.String
     },
+
     lastName: {
       max: 50,
       required: true,
-      type: TypeEnum.String
+      type: TypesEnum.String
     },
+
     middleName: {
       max: 50,
-      type: TypeEnum.String
+      type: TypesEnum.String
     }
   };
 };
+
+export default schema;

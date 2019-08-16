@@ -1,7 +1,7 @@
-import Formoose from '../index';
-import { formDataMock, curryStateSetter, schema } from '../../mocks';
+import FormooseTools from '../index';
+import { formDataMock, curryStateSetter, schema } from '../../__mocks__';
 
-describe('[ getTrimmed - Index Util ]', () => {
+describe('[ TOOLS ][ getTrimmed ]', () => {
   let formData;
   let mockedSchema;
 
@@ -13,12 +13,12 @@ describe('[ getTrimmed - Index Util ]', () => {
   it('Returns a single key value Object to be submitted on Services', () => {
     const finalValue = 'fresh value';
 
-    Formoose.setValue(curryStateSetter(formData), 'firstName', finalValue);
-    Formoose.setValue(curryStateSetter(formData), 'lastName', finalValue);
-    Formoose.setValue(curryStateSetter(formData), 'middleName', '');
+    FormooseTools.setValue(curryStateSetter(formData), 'firstName', finalValue);
+    FormooseTools.setValue(curryStateSetter(formData), 'lastName', finalValue);
+    FormooseTools.setValue(curryStateSetter(formData), 'middleName', '');
 
     expect(
-      Formoose.getTrimmed(formData, mockedSchema)
+      FormooseTools.getTrimmed(formData, mockedSchema)
     ).toMatchObject({
       firstName: finalValue,
       lastName: finalValue,

@@ -1,7 +1,7 @@
 import MountFormData from './MountFormData';
-import schema from '../../mocks/runner/schema';
+import schema from '../../__mocks__/runner/schema';
 
-describe('[ Tools ][ MountFormData ] ', () => {
+describe('[ Tools ][ mountFormData ] ', () => {
   it('Mounts the right form data', () => {
     expect(MountFormData(schema()))
       .toMatchObject({

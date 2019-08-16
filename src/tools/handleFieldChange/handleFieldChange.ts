@@ -1,4 +1,4 @@
-import Formoose from '../index';
+import FormooseTools from '../index';
 
 /**
  * Shared Method to manipulate FieldChanges
@@ -12,7 +12,7 @@ function handleFieldChange(event, field, stateSetter) {
   event.persist();
   const { target } = event;
   const value = target.checked || target.value;
-  Formoose.setValue(stateSetter, field, value);
+  FormooseTools.setValue(stateSetter, field, value);
 }
 
 export default handleFieldChange;

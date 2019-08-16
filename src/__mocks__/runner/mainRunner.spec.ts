@@ -1,12 +1,10 @@
-import { Validate, MountFormData } from '../../core';
-import Formoose from '../../tools';
+import { Validate } from '../../core';
+import { getSimpleObject, setValue, mountFormData } from '../../tools';
 import schema from './schema';
 import { curryStateSetter } from "../mocks";
 
 describe('[ VALIDATIONS RUNNER ]', () => {
-
-  const { getSimpleObject, setValue } = Formoose;
-  const formData = MountFormData(schema());
+  const formData = mountFormData(schema());
   setValue(curryStateSetter(formData), 'email', 'romulobordezani@gmail.com');
   const modelMock = getSimpleObject(formData);
 

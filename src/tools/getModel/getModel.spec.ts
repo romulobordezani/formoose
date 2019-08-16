@@ -1,7 +1,7 @@
-import Formoose from '../index';
-import { formDataMock, curryStateSetter } from '../../mocks';
+import FormooseTools from '../index';
+import { formDataMock, curryStateSetter } from '../../__mocks__';
 
-describe('[ getModel - Index Util ]', () => {
+describe('[ TOOLS ][ getModel ]', () => {
   let formData;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('[ getModel - Index Util ]', () => {
 
   it('Returns a valid Model from formData', () => {
     const finalValue = 'fresh value';
-    Formoose.setValue(curryStateSetter(formData), 'field1', finalValue);
-    expect(Formoose.getModel(formData, 'field1')).toEqual({ field1: finalValue });
+    FormooseTools.setValue(curryStateSetter(formData), 'field1', finalValue);
+    expect(FormooseTools.getModel(formData, 'field1')).toEqual({ field1: finalValue });
   });
 });

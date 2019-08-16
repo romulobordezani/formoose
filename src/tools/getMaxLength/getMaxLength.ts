@@ -1,4 +1,5 @@
-import Formoose from '../index';
+import FormooseTools from '../index';
+import { IFormData, ISchema } from "../../interfaces";
 
 /**
  * A tool to get MaxLength info from a schema
@@ -7,10 +8,10 @@ import Formoose from '../index';
  * @param formData
  * @param field
  * @param schema
- * @returns {Object} - Simulation of model <User> with only needed fields
+ * @returns {Object} - Simulation of model
  */
-function getMaxLength(formData, field, schema) {
-  return schema(Formoose.getSimpleObject(formData), schema(formData))[field].max;
+function getMaxLength(formData: IFormData, field: string, schema: ISchema) {
+  return schema[field].max;
 }
 
 export default getMaxLength;

@@ -1,11 +1,12 @@
-import CustomError from "../core/CustomError";
-import TypesEnum from "./Types.enum";
+import { ICustomError, TypesEnum } from '.';
 
-export default interface ISchemaItem {
+interface ISchemaItem {
   max?: number | undefined,
   min?: number  | undefined,
   required?: boolean  | undefined,
   type: TypesEnum,
-  validate?: () => CustomError,
+  validate?: () => ICustomError,
   enum?: any
 }
+
+export default ISchemaItem;

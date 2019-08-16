@@ -1,7 +1,7 @@
-import Formoose from '../index';
-import { formDataMock, schema } from '../../mocks';
+import FormooseTools from '../index';
+import { formDataMock, schema } from '../../__mocks__';
 
-describe('[ getMaxLength - Index Util ]', () => {
+describe('[ TOOLS ][ getMaxLength ]', () => {
   let formData;
 
   beforeEach(() => {
@@ -9,10 +9,12 @@ describe('[ getMaxLength - Index Util ]', () => {
   });
 
   it('Returns a number with Max Length', () => {
-    expect(Formoose.getMaxLength(formData, 'middleName', schema)).toEqual(50);
+    expect(
+      FormooseTools.getMaxLength(formData, 'middleName', schema())
+    ).toEqual(50);
   });
 
   it('Returns undefined without errors from a model without max', () => {
-    expect(Formoose.getMaxLength(formData, 'id', schema)).toBeUndefined();
+    expect(FormooseTools.getMaxLength(formData, 'id', schema())).toBeUndefined();
   });
 });

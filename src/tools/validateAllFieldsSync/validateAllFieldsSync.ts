@@ -1,24 +1,21 @@
-import Formoose from '../index';
+import FormooseTools from '../index';
+import { Validate } from '../../core';
 
 /**
  * Shared Method To validateAllFieldsSync Fields in a Form, returning if all them are valid or not
  * @category Utils
  * @alias validate/validateAll
- * @param validator
+ * @param schema
  * @param formData - All fields state from component
- * @param {stateSetter} setFormData
+ * @param {Function} setFormData
  * @param {function} t i18n get translation method
- * @param isStateAndCityRequired
- * @param {string} validatorName - The name of the validation engine to be used
  * @returns {Promise<any>}
  */
 function validateAllFieldsSync(
-  validator,
+  schema,
   formData,
   setFormData,
-  t,
-  isStateAndCityRequired = true,
-  validatorName
+  t
 ) {
   return new Promise(resolve => {
     const fakeFormData = Object.assign({}, formData);
@@ -29,15 +26,16 @@ function validateAllFieldsSync(
     };
 
     const promiseList = Object.keys(formData).map(field =>
-      validator(
-        Formoose.getModel(formData, field),
-        [field]
+      Validate(
+        FormooseTools.getModel(formData, field),
+        [field],
+        schema
       )
         .then(() => {
-          Formoose.cleanError(fakeSetFormData, field);
+          FormooseTools.cleanError(fakeSetFormData, field);
         })
         .catch(error => {
-          Formoose.setError(fakeSetFormData, field, error, t);
+          FormooseTools.setError(fakeSetFormData, field, error, t);
           throw error;
         })
     );
@@ -47,7 +45,7 @@ function validateAllFieldsSync(
         setFormData(fakeFormData);
         resolve(true);
       })
-      .catch(() => {
+      .catch(e => {
         setFormData(fakeFormData);
         resolve(false);
       });

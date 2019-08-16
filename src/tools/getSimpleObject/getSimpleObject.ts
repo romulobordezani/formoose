@@ -1,15 +1,34 @@
+import { IFormData} from "../../interfaces";
+
 /**
- * A Toll to extract a user to be used at API, without errors, messages and with the values at first object level
- * @param formData All fields state from component
+ * Usually an IFormData contains complex objects to each field, with error, value and message
+ * This method returns a simpler object, with keys and values only
+ * @param {IFormData} formData
+ * @param {string[]} fieldsToSkip The list of field to remove from result
+ * @param {boolean} getEmptyValuesToo returns empty fields too
  */
-function getSimpleObject(formData, filter) {
+function getSimpleObject(
+  formData: IFormData,
+  fieldsToSkip: string[]|null = null,
+  getEmptyValuesToo: boolean = false
+) {
+
   const objectAdapter = {};
-  Object.keys(formData).map(field => {
-    if (formData[field].value !== '' && formData[field].value !== undefined) {
-      objectAdapter[field] = formData[field].value;
+  const allFieldNames = Object.keys(formData);
+
+  allFieldNames.map((fieldName: string) => {
+    const fieldHasAnyValue = (formData[fieldName].value !== '' && formData[fieldName].value !== undefined);
+    if (getEmptyValuesToo || fieldHasAnyValue) {
+      objectAdapter[fieldName] = formData[fieldName].value;
     }
-    return null;
   });
+
+  if (fieldsToSkip) {
+    fieldsToSkip.forEach((fieldName: string) => {
+      delete objectAdapter[fieldName];
+    });
+  }
+
   return objectAdapter;
 }
 
