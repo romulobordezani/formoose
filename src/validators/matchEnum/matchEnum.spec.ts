@@ -6,10 +6,11 @@ const EnumMock = {
 };
 
 describe('[ matchEnum ]', () => {
+
   it('Allows a value listed at Enum options', () => {
-    expect(() => {
-      matchEnum('enumValue1', EnumMock, 'test-match-enum');
-    }).toBeTruthy();
+    expect(
+      matchEnum('ENUM1', EnumMock, 'test-match-enum')
+    ).toBeTruthy();
   });
 
   it('Detects not matches over an enum list', () => {
