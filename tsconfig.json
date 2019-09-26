@@ -16,6 +16,7 @@
       "es2017",
       "dom"
     ],
+    "declaration": true,
     "strict": true
   },
   "compileOnSave": true,

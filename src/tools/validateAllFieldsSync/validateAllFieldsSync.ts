@@ -1,5 +1,8 @@
 import FormooseTools from '../index';
 import { Validate } from '../../core';
+import ISchema from "../../interfaces/ISchema";
+import IFormData from "../../interfaces/IFormData";
+import IStateSetter from "../../interfaces/IStateSetter";
 
 /**
  * Shared Method To validateAllFieldsSync Fields in a Form, returning if all them are valid or not
@@ -7,15 +10,15 @@ import { Validate } from '../../core';
  * @alias validate/validateAll
  * @param schema
  * @param formData - All fields state from component
- * @param {Function} setFormData
+ * @param {Function} stateSetter
  * @param {function} t i18n get translation method
  * @returns {Promise<any>}
  */
 function validateAllFieldsSync(
-  schema,
-  formData,
-  setFormData,
-  t
+  schema: ISchema,
+  formData: IFormData,
+  stateSetter: IStateSetter,
+  t: (any)
 ) {
   return new Promise(resolve => {
     const fakeFormData = Object.assign({}, formData);
@@ -42,11 +45,11 @@ function validateAllFieldsSync(
 
     Promise.all(promiseList)
       .then(() => {
-        setFormData(fakeFormData);
+        stateSetter(fakeFormData);
         resolve(true);
       })
       .catch(e => {
-        setFormData(fakeFormData);
+        stateSetter(fakeFormData);
         resolve(false);
       });
   });

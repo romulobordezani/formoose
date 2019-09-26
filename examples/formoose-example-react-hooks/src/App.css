@@ -1,0 +1,84 @@
+:root {
+  --main-bg-color: #282c34;
+  --shadow-grey: #4b4b4b;
+  --light-grey: #999999;
+  --black: #333333;
+  --paper-white: #AAAAAA;
+}
+
+.App {
+  text-align: center;
+  background-color: var(--main-bg-color);
+  min-height: 100vh;
+  color: antiquewhite;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-disclaimer {
+  padding: 10vmin;
+  font-size: 2vmin;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+input {
+  border-radius: 4px;
+  padding: 6px;
+  height: 26px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--shadow-grey);
+  font-family: sans-serif;
+  -webkit-appearance: none;
+  transition: box-shadow 300ms;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0.2em 0.8em 1.6em var(--light-grey);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--light-grey);
+  opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--light-grey);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--light-grey);
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  color: var(--light-grey);
+  -webkit-text-fill-color: var(--black);
+  -webkit-box-shadow: 0 0 0 10px var(--paper-white) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  font-family: sans-serif;
+}

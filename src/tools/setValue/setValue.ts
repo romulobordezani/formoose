@@ -6,8 +6,10 @@
  * @param {string} field - The field to be validated
  * @param value
  */
-function setValue(stateSetter, field, value) {
-  // TODO - Do not let set a new field that doesn'' exists
+import { IStateSetter } from "../../interfaces";
+
+function setValue(stateSetter: IStateSetter, field: string, value: any) {
+  // TODO - Do not let set a new field that doesn't exists of formData
   // TODO - Better named as UpdateValue???
   stateSetter(state => ({
     ...state,

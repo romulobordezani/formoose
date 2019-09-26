@@ -1,8 +1,10 @@
-class CustomError extends Error {
+import {ICustomError} from "../../interfaces";
+
+class CustomError extends Error implements ICustomError {
   public message: string;
-  private field: string | undefined;
-  private translatedMessageId: string | undefined;
-  private translatedMessageLocals: {} | undefined;
+  public field: string | undefined;
+  public translatedMessageId: string | undefined;
+  public translatedMessageLocals: {} | undefined;
 
   constructor(
       message?: string,

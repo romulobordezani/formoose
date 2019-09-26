@@ -1,6 +1,6 @@
 {
   "name": "formoose",
-  "version": "0.0.1",
+  "version": "0.0.1-rc-3",
   "description": "Mongoose like Schema based validation engine for React Hooks",
   "private": false,
   "main": "dist/main.js",
@@ -11,7 +11,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack --watch",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "lint": ""
   },
   "repository": {

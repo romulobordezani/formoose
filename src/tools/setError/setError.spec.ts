@@ -1,5 +1,6 @@
 import FormooseTools from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
+import CustomError from '../../core/CustomError';
 
 describe('[ TOOLS ][ setError ]', () => {
   let formData;
@@ -10,10 +11,12 @@ describe('[ TOOLS ][ setError ]', () => {
 
   it('Sets an error as true in the formData model', () => {
 
+    const fakeError = new CustomError('Fake Error', 'field1', 'got an error');
+
     FormooseTools.setError(
       curryStateSetter(formData),
       'field1',
-      { translatedMessageId: 'got an error' },
+      fakeError,
       translatedMessageId => translatedMessageId
     );
 

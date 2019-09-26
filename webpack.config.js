@@ -7,7 +7,10 @@ const serverConfig = {
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: '/',
-        filename: '[name].js'
+        filename: '[name].js',
+        libraryTarget: 'umd',
+        library: 'Formoose',
+        umdNamedDefine: true
     },
     module: {
         rules: [{

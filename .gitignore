@@ -1,3 +1,4 @@
 .idea
 node_modules
 dist
+examples/formoose-example-react-hooks/node_modules

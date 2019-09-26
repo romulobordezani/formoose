@@ -10,6 +10,7 @@ import { ErrorHandler } from '../../core';
  */
 function matchEnum(value, enumObject, identifier) {
   const existsInEnum = Object.values(enumObject).indexOf(value) > -1;
+
   if (!existsInEnum) {
     ErrorHandler.throw(
       `The value '${value}' isn't listed in the possible enumerable list '${JSON.stringify(

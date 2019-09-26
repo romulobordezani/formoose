@@ -6,9 +6,9 @@ const MountFormData = (schema: ISchema) => {
 
   Object.keys(schema).map((key: string) => {
     formData[key] = {
-      error: null,
-      message: null,
-      value: null
+      error: undefined,
+      message: undefined,
+      value: ''
     };
   });
 

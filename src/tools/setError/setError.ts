@@ -2,12 +2,14 @@
  * Shared Method to Set an error in a specific Field
  * @category Utils
  * @alias validate/setError
- * @param {stateSetter} stateSetter
+ * @param {IStateSetter} stateSetter
  * @param {string} field - The field to set the error
- * @param error - <CustomError> The error object coming from Validators
- * @param translation i18n context
+ * @param error - <ICustomError> The error object coming from Validators
+ * @param {(any)} translation i18n t function
  */
-function setError(stateSetter, field, error, translation) {
+import { IStateSetter, ICustomError } from "../../interfaces";
+
+function setError(stateSetter: IStateSetter, field: string, error: ICustomError, translation: (any)) {
   stateSetter(state => ({
     ...state,
     [field]: {
