@@ -1,6 +1,6 @@
 {
   "name": "formoose",
-  "version": "0.0.1-rc-3",
+  "version": "0.0.1",
   "description": "Mongoose like Schema based validation engine for React Hooks",
   "private": false,
   "main": "dist/main.js",
