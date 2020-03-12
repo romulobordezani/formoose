@@ -49,8 +49,6 @@ function validateAllFieldsSync(
         resolve(true);
       })
       .catch(e => {
-        // tslint:disable-next-line:no-console
-        console.log(e);
         stateSetter(fakeFormData);
         resolve(false);
       });
