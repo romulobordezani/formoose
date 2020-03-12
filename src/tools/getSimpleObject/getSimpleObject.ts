@@ -12,7 +12,6 @@ function getSimpleObject(
   fieldsToSkip: string[]|null = null,
   getEmptyValuesToo: boolean = false
 ) {
-
   const objectAdapter = {};
   const allFieldNames = Object.keys(formData);
 

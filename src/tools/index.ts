@@ -1,4 +1,5 @@
 import cleanError from './cleanError/cleanError';
+import convertModelToForm from './convertModelToForm/convertModelToForm';
 import setMessage from './setMessage/setMessage';
 import setError from './setError/setError';
 import setValue from './setValue/setValue';
@@ -14,6 +15,8 @@ import mountFormData from './mountFormData/MountFormData';
 class FormooseTools {
 
   public static cleanError = cleanError;
+
+  public static convertModelToForm = convertModelToForm;
 
   public static setMessage = setMessage;
 
@@ -43,6 +46,7 @@ export default FormooseTools;
 
 export {
   cleanError,
+  convertModelToForm,
   setMessage,
   setError,
   setValue,

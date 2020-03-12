@@ -8,12 +8,12 @@ import { ErrorHandler } from '../../core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function matchValidate(value, validate, identifier) {
+function matchValidate(value, validate, identifier, message: string = 'error00002') {
   if (!validate(value)) {
     ErrorHandler.throw(
       `Value not passed Custom Validation ${validate.name} - on field: ${identifier}`,
       identifier,
-      'error00002'
+      message
     );
   }
   return true;

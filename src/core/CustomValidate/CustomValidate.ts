@@ -9,7 +9,7 @@ const CustomValidate = checkerData => {
   const { value, propsOnSchema = {}, propName } = checkerData;
   const { validate } = propsOnSchema;
   if (validate) {
-    matchValidate(value, validate, propName);
+    matchValidate(value, validate.callback, propName, validate.message);
   }
 };
 
