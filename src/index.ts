@@ -6,6 +6,7 @@ import {ICustomError, IModel, ISchema, IStateSetter} from "./interfaces";
 
 import {
   cleanError,
+  convertModelToForm,
   setMessage,
   setError,
   setValue,
@@ -44,12 +45,17 @@ class Formoose {
 
     this.tools = {
       cleanError: (field: string) => cleanError(this.stateSetter, field),
+      convertModelToForm,
       getMaxLength: (field: string) => getMaxLength(this.formData, field, this.schema),
       getModel: (field: string) => getModel(this.formData, field),
       getSimpleObject: (fieldsToSkip: string[], getEmptyValuesToo: boolean)  => getSimpleObject(this.formData, fieldsToSkip, getEmptyValuesToo),
       handleFieldChange: (event: any, field: string) => handleFieldChange(event, field, this.stateSetter),
       mountFormData: () => mountFormData(this.schema),
       setError: (field: string, error: ICustomError) => setError(this.stateSetter, field, error, this.t),
+      setForm: (outerFormData: IFormData, outerStateSetter: any) => {
+        this.formData = outerFormData;
+        this.stateSetter = outerStateSetter;
+      },
       setMessage: (field: string, message: string) => setMessage(this.stateSetter, field, message),
       setValue: (field: string, value: any) => setValue(this.stateSetter, field, value),
       updateFormDataValues: (updatedModel: IModel) => updateFormDataValues(this.formData, updatedModel),
