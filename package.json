@@ -1,6 +1,6 @@
 {
   "name": "formoose",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Mongoose like Schema based validation engine for React Hooks",
   "private": false,
   "main": "dist/main.js",
@@ -12,7 +12,8 @@
     "test": "jest",
     "start": "webpack --watch",
     "build": "webpack --mode production",
-    "lint": ""
+    "prepublish": "npm test && npm run build",
+    "lint": "tslint \"src/**/*.ts{,x}\""
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
     "form",
     "validation",
     "unified",
-    "formoose"
+    "formoose",
+    "react"
   ],
   "author": "romulobordezani",
   "license": "ISC",
@@ -33,17 +35,16 @@
   },
   "homepage": "https://github.com/romulobordezani/formoose#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.17",
-    "jest": "^24.8.0",
-    "ts-jest": "^24.0.2",
-    "ts-loader": "^6.0.0",
+    "@types/jest": "^25.1.4",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "ts-loader": "^6.2.1",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-loader": "^3.5.4",
-    "typescript": "^3.4.5",
-    "webpack": "^4.31.0",
-    "webpack-cli": "^3.3.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
     "webpack-node-externals": "^1.7.2"
-  },
-  "dependencies": {}
+  }
 }

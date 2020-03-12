@@ -1,6 +1,6 @@
 export { default as ICustomError } from './ICustomError';
 
-export { default as ISchema } from './Ischema';
+export { default as ISchema } from './ISchema';
 export { default as ISchemaItem } from './IschemaItem';
 export { default as ISchemaGetter } from './ISchemaGetter';
 export { default as IStateSetter } from './IStateSetter';

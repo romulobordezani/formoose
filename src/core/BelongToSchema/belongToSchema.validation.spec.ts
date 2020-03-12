@@ -2,13 +2,13 @@ import { BelongToSchema } from '..';
 
 const schemaMock = {
   prop1: {
-    type: String,
     required: true,
+    type: String,
     unique: true
   },
   prop2: {
-    type: String,
-    required: true
+    required: true,
+    type: String
   }
 };
 
@@ -31,7 +31,6 @@ describe('[ BELONG TO SCHEMA ]', () => {
         'prop3'
       ];
       expect(() => {
-        console.log(BelongToSchema(unexpectedPropsOnSchema, schemaMock));
         BelongToSchema(unexpectedPropsOnSchema, schemaMock);
       }).toThrow(new Error(`${unexpectedPropsOnSchema} not found on Schema.`));
     });

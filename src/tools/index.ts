@@ -9,7 +9,7 @@ import getModel from './getModel/getModel';
 import getMaxLength from './getMaxLength/getMaxLength';
 import updateFormDataValues from './updateFormDataValues/updateFormDataValues';
 import getSimpleObject from './getSimpleObject/getSimpleObject';
-import mountFormData from './mountFormData/mountFormData';
+import mountFormData from './mountFormData/MountFormData';
 
 class FormooseTools {
 

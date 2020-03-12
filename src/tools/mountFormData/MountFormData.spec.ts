@@ -6,14 +6,14 @@ describe('[ Tools ][ mountFormData ] ', () => {
     expect(MountFormData(schema()))
       .toMatchObject({
         id: {
-          error: null,
-          message: null,
-          value: null,
+          error: undefined,
+          message: undefined,
+          value: '',
         },
         lastName: {
-          error: null,
-          message: null,
-          value: null,
+          error: undefined,
+          message: undefined,
+          value: '',
         }
       });
   });

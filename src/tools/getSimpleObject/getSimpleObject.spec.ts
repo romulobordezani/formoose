@@ -29,9 +29,9 @@ describe('[ TOOLS ][ getSimpleObject ]', () => {
     expect(
       getSimpleObject(formData, null, true)
     ).toStrictEqual({
-      email: null,
+      email: '',
       firstName: finalValue,
-      id: null,
+      id: '',
       lastName: finalValue,
       middleName: ''
     });
@@ -45,8 +45,8 @@ describe('[ TOOLS ][ getSimpleObject ]', () => {
     expect(
       getSimpleObject(formData, ['firstName'], true)
     ).toStrictEqual({
-      email: null,
-      id: null,
+      email: '',
+      id: '',
       lastName: finalValue,
       middleName: ''
     });
