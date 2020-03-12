@@ -2,3 +2,4 @@ docs/
 .idea/
 .DS_Store
 .editorconfig
+src

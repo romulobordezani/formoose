@@ -11,8 +11,8 @@
   "scripts": {
     "test": "jest",
     "start": "webpack --watch",
-    "build": "webpack --mode production",
-    "prepublish": "npm test && npm run build",
+    "prepare": "webpack --mode production",
+    "prepublish": "npm test && npm run lint",
     "lint": "tslint \"src/**/*.ts{,x}\""
   },
   "repository": {
