@@ -24,7 +24,8 @@ class Formoose {
 
   public tools: FormooseTools;
   public validate: (model: {}, propsToValidate: string[], schema: ISchema) => Promise<any>;
-  private readonly schema: ISchema;
+  private schema: ISchema;
+  private readonly schemaGetter: ISchemaGetter;
   private _formData: IFormData | undefined;
   private _stateSetter: any;
   private readonly t: (any);
@@ -36,6 +37,7 @@ class Formoose {
     stateSetter: IStateSetter = state => state,
     model?: IModel
   ) {
+    this.schemaGetter = schema;
     this.schema = schema(model);
     this.formData = formData;
     this.stateSetter = stateSetter;
@@ -49,7 +51,10 @@ class Formoose {
       getMaxLength: (field: string) => getMaxLength(this.formData, field, this.schema),
       getModel: (field: string) => getModel(this.formData, field),
       getSimpleObject: (fieldsToSkip: string[], getEmptyValuesToo: boolean)  => getSimpleObject(this.formData, fieldsToSkip, getEmptyValuesToo),
-      handleFieldChange: (event: any, field: string) => handleFieldChange(event, field, this.stateSetter),
+      handleFieldChange: async (event: any, field: string) => {
+        await handleFieldChange(event, field, this.stateSetter);
+        this.schema = this.schemaGetter(getSimpleObject(this.formData, null, true));
+      },
       mountFormData: () => mountFormData(this.schema),
       setError: (field: string, error: ICustomError) => setError(this.stateSetter, field, error, this.t),
       setForm: (outerFormData: IFormData, outerStateSetter: any) => {

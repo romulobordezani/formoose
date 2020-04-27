@@ -9,11 +9,25 @@ import { IStateSetter } from "../../interfaces";
  * @param {stateSetter} stateSetter
  * @param {string} field - The field to be validated
  */
-function handleFieldChange(event: any, field: string, stateSetter: IStateSetter) {
+async function handleFieldChange(event: any, field: string, stateSetter: IStateSetter) {
   event.persist();
   const { target } = event;
-  const value = target.checked || target.value;
-  FormooseTools.setValue(stateSetter, field, value);
+  const { type } = target;
+  let value = null;
+
+  switch(type) {
+    case 'radio':
+      value = target.value;
+      break;
+    case 'checkbox':
+      value = target.checked;
+      break;
+    default:
+      value = target.value;
+      break;
+  }
+
+  await FormooseTools.setValue(stateSetter, field, value);
 }
 
 export default handleFieldChange;
