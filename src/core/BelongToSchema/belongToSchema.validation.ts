@@ -13,9 +13,11 @@ const BelongToSchema = (props, schema) => {
 
   props.map(propToCheck => {
     const notHasPropertyOnSchema = !Object.prototype.hasOwnProperty.call(schema, propToCheck);
+
     if (notHasPropertyOnSchema) {
       errorFound = `${propToCheck} not found on Schema.`;
     }
+
     return errorFound;
   });
 
