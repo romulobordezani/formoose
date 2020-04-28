@@ -1,7 +1,7 @@
 {
   "name": "formoose",
-  "version": "1.0.4",
-  "description": "Mongoose like Schema based validation engine for React Hooks",
+  "version": "1.0.5",
+  "description": "Schema based run time validation engine, made to integrate back and front-end validations.",
   "private": false,
   "main": "dist/main.js",
   "engine": {

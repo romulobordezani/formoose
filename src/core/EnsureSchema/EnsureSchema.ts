@@ -22,23 +22,40 @@ const EnsureSchema = checkerData => {
     return null;
   }
 
-  // Trows an error if value's type and Schema's type doesn't matches
-  TypeChecker(checkerData);
+  for (const prop in checkerData.propsOnSchema) {
+    if (checkerData.propsOnSchema.hasOwnProperty(prop)) {
 
-  // Trows an error if Required Prop is Empty
-  RequiredChecker(checkerData);
+      if (prop === 'type') {
+        // Trows an error if value's type and Schema's type doesn't matches
+        TypeChecker(checkerData);
+      }
 
-  // Trows an error if value doesn't have minimum Length
-  MinLengthChecker(checkerData);
+      if (prop === 'required') {
+        // Trows an error if Required Prop is Empty
+        RequiredChecker(checkerData);
+      }
 
-  // Trows an error if value exceeds maximum Length
-  MaxLengthChecker(checkerData);
+      if (prop === 'min') {
+        // Trows an error if value doesn't have minimum Length
+        MinLengthChecker(checkerData);
+      }
 
-  // Trows an error if value doesn't matches Schema Regex
-  CustomValidate(checkerData);
+      if (prop === 'max') {
+        // Trows an error if value exceeds maximum Length
+        MaxLengthChecker(checkerData);
+      }
 
-  // Trows an error if value doesn't matches Enumerable
-  EnumChecker(checkerData);
+      if (prop === 'validate') {
+        // Trows an error if value doesn't matches Schema Regex
+        CustomValidate(checkerData);
+      }
+
+      if (prop === 'enum') {
+        // Trows an error if value doesn't matches Enumerable
+        EnumChecker(checkerData);
+      }
+    }
+  }
 
   return true;
 };

@@ -27,9 +27,8 @@ describe('[ TOOLS ][ validateAllFieldsSync ]', () => {
     } catch (e) {
       expect(formData.firstName.error).toBeTruthy();
       expect(formData.firstName.message).toBe('error00001');
-      expect(e.message).toBe('String expected, type sent: number - on field: firstName');
+      expect(e.message).toBe('Invalid Form');
       expect(validationResponse).toBeFalsy();
-      expect(validationResponse).not.toBeNull();
     }
   });
 

@@ -20,7 +20,7 @@ function validateAllFieldsSync(
   stateSetter: IStateSetter,
   t: (any)
 ) {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     const fakeFormData = Object.assign({}, formData);
 
     const fakeSetFormData = fakeState => {
@@ -50,7 +50,11 @@ function validateAllFieldsSync(
       })
       .catch(e => {
         stateSetter(fakeFormData);
-        resolve(false);
+        reject({
+          formData: fakeFormData,
+          message: 'Invalid Form',
+          result: false
+        });
       });
   });
 }
