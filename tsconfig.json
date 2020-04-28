@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "sourceMap": true,
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "noImplicitAny": false,
     "moduleResolution": "node",
