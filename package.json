@@ -1,6 +1,6 @@
 {
   "name": "formoose",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Schema based run time validation engine, made to integrate back and front-end validations.",
   "private": false,
   "main": "dist/main.js",
