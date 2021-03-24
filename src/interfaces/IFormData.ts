@@ -1,4 +1,4 @@
-import { IField } from ".";
+import { IField } from '.';
 
 interface IFormData {
   [index: string]: IField;
