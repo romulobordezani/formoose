@@ -55,7 +55,7 @@ function FormooseFormExample() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    let formIsValid = await validateAllFieldsSync();
+    const formIsValid = await validateAllFieldsSync();
 
     if (formIsValid) {
       console.info('We are good to go!');
