@@ -1,7 +1,7 @@
 {
   "name": "formoose",
-  "version": "1.0.9",
-  "description": "Schema based run time validation engine, made to integrate back and front-end validations.",
+  "version": "1.0.10",
+  "description": "Schema based run time validation engine, made to integrate back and front-end validations using Mongoose like schemas.",
   "private": false,
   "main": "dist/main.js",
   "engine": {
