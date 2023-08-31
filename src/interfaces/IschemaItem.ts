@@ -1,12 +1,10 @@
 import { ICustomError, TypesEnum } from '.';
 
-interface ISchemaItem {
+export interface ISchemaItem {
   max?: number | undefined,
   min?: number  | undefined,
   required?: boolean  | undefined,
   type: TypesEnum,
   validate?: () => ICustomError,
-  enum?: any
+  enum?: Record<string, string>
 }
-
-export default ISchemaItem;

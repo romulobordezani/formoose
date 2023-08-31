@@ -1,9 +1,7 @@
-interface ICustomError {
+export interface ICustomError {
   message: string;
   name: string;
   field?: string | undefined;
   translatedMessageId?: string | undefined;
-  translatedMessageLocals?: {} | undefined;
+  translatedMessageLocals?: Record<string, string> | undefined;
 }
-
-export default ICustomError;

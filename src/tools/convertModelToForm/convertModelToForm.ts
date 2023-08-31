@@ -1,4 +1,4 @@
-import { IFormData, IModel } from "../../interfaces";
+import { IModel } from '@/interfaces';
 
 /**
  * Tranform a simple object, usually passed in json requests, in a form object

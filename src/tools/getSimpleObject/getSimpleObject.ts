@@ -1,4 +1,4 @@
-import { IFormData} from "../../interfaces";
+import { IFormData} from '@/interfaces';
 
 /**
  * Usually an IFormData contains complex objects to each field, with error, value and message

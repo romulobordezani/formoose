@@ -1,4 +1,4 @@
-import { ISchema, IFormData } from '../../interfaces';
+import { ISchema, IFormData } from '@/interfaces';
 
 // TODO move it to tools
 const MountFormData = (schema: ISchema) => {

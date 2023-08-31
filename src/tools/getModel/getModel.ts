@@ -1,4 +1,4 @@
-import IFormData from "../../interfaces/IFormData";
+import { IFormData } from '@/interfaces';
 
 function getModel(formData: IFormData, field: string) {
   return {

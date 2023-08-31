@@ -7,7 +7,7 @@
  * @param error - <ICustomError> The error object coming from Validators
  * @param {(any)} translation i18n t function
  */
-import { IStateSetter, ICustomError } from "../../interfaces";
+import { IStateSetter, ICustomError } from '@/interfaces';
 
 function setError(stateSetter: IStateSetter, field: string, error: ICustomError, translation: (any)) {
   stateSetter(state => ({

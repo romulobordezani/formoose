@@ -1,5 +1,5 @@
 import FormooseTools from '../index';
-import { IStateSetter } from "../../interfaces";
+import { IStateSetter } from '@/interfaces';
 
 /**
  * Shared Method to manipulate FieldChanges

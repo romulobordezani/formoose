@@ -1,4 +1,4 @@
-import { IStateSetter } from "../../interfaces";
+import { IStateSetter } from '@/interfaces';
 
 /**
  * Shared Method to Clean Errors in a specific Field of a Data Form integrated with domains

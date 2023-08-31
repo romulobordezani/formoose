@@ -1,5 +1,3 @@
-interface IStateSetter {
+export interface IStateSetter {
   (any)
 }
-
-export default IStateSetter;

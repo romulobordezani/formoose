@@ -1,4 +1,4 @@
-import { IStateSetter } from "../../interfaces";
+import { IStateSetter } from '@/interfaces';
 
 /**
  * Shared Method to Set a message in a specific Field

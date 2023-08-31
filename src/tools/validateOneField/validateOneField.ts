@@ -1,6 +1,6 @@
-import FormooseTools from '../index';
-import { Validate } from '../../core';
-import { ISchema, IFormData, IStateSetter } from '../../interfaces';
+import FormooseTools from '..';
+import { Validate } from '@/core';
+import { ISchema, IFormData, IStateSetter } from '@/interfaces';
 
 /**
  * Method to validate only one field and set related errors and messages

@@ -1,8 +1,6 @@
 import { Validate } from './core';
 import FormooseTools from './tools';
-import IFormData from "./interfaces/IFormData";
-import ISchemaGetter from "./interfaces/ISchemaGetter";
-import {ICustomError, IModel, ISchema, IStateSetter} from "./interfaces";
+import { IFormData, ISchemaGetter, ICustomError, IModel, ISchema, IStateSetter } from "@/interfaces";
 
 import {
   cleanError,
@@ -18,7 +16,7 @@ import {
   getSimpleObject,
   validateAllFieldsSync,
   validateOneField
-} from './tools';
+} from "@/tools";
 
 class Formoose {
 

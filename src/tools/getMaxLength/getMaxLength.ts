@@ -1,5 +1,4 @@
-import FormooseTools from '../index';
-import { IFormData, ISchema } from "../../interfaces";
+import { IFormData, ISchema } from '@/interfaces';
 
 /**
  * A tool to get MaxLength info from a schema

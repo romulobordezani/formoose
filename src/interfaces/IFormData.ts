@@ -1,7 +1,5 @@
 import { IField } from '.';
 
-interface IFormData {
+export interface IFormData {
   [index: string]: IField;
 }
-
-export default IFormData;

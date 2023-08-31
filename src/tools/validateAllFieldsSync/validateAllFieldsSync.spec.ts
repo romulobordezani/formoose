@@ -24,7 +24,7 @@ describe('[ TOOLS ][ validateAllFieldsSync ]', () => {
         curryStateSetter(formData),
         translatedMessageId => translatedMessageId
       );
-    } catch (e) {
+    } catch (e: any) {
       expect(formData.firstName.error).toBeTruthy();
       expect(formData.firstName.message).toBe('error00001');
       expect(e.message).toBe('Invalid Form');

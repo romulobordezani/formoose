@@ -59,5 +59,3 @@ export {
   validateAllFieldsSync,
   validateOneField
 }
-
-// Commit test

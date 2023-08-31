@@ -1,4 +1,4 @@
-import { Validate } from '../../core';
+import { Validate } from '@/core';
 import { getSimpleObject, setValue, mountFormData } from '../../tools';
 import schema from './schema';
 import { curryStateSetter } from "../mocks";

@@ -1,4 +1,4 @@
-import { ErrorHandler } from '../../core';
+import { ErrorHandler } from '@/core';
 import { isString } from '../index';
 
 /**

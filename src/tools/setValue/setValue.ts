@@ -6,7 +6,7 @@
  * @param {string} field - The field to be validated
  * @param value
  */
-import { IStateSetter } from "../../interfaces";
+import { IStateSetter } from '@/interfaces';
 
 async function setValue(stateSetter: IStateSetter, field: string, value: any) {
   // TODO - Do not let set a new field that doesn't exists of formData

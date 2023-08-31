@@ -1,8 +1,6 @@
 import FormooseTools from '../index';
-import { Validate } from '../../core';
-import ISchema from "../../interfaces/ISchema";
-import IFormData from "../../interfaces/IFormData";
-import IStateSetter from "../../interfaces/IStateSetter";
+import { Validate } from '@/core';
+import { ISchema, IFormData, IStateSetter } from "../../interfaces";
 
 /**
  * Shared Method To validateAllFieldsSync Fields in a Form, returning if all them are valid or not

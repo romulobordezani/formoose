@@ -1,7 +1,5 @@
 import { ISchemaItem } from "./index";
 
-interface ISchema {
+export interface ISchema {
   [key: string]: ISchemaItem
 }
-
-export default ISchema;

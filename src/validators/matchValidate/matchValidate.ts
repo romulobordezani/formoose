@@ -1,4 +1,4 @@
-import { ErrorHandler } from '../../core';
+import { ErrorHandler } from '@/core';
 
 /**
  * @category Validators

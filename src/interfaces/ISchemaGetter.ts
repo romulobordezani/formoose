@@ -1,5 +1,3 @@
-import { ISchema, IModel } from "./index";
+import { ISchema, IModel } from '.';
 
-type ISchemaGetter = (model?: IModel) => ISchema;
-
-export default ISchemaGetter;
+export type ISchemaGetter = (model?: IModel) => ISchema;
