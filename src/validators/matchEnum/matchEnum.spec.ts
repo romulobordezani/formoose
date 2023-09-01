@@ -1,4 +1,4 @@
-import { matchEnum } from '../index';
+import { matchEnum } from '@/validators';
 
 const EnumMock = {
   enumValue1: 'ENUM1',

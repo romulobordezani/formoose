@@ -9,7 +9,7 @@
  */
 import { IStateSetter, ICustomError } from '@/interfaces';
 
-function setError(stateSetter: IStateSetter, field: string, error: ICustomError, translation: (any)) {
+export function setError(stateSetter: IStateSetter, field: string, error: ICustomError, translation: (any)) {
   stateSetter(state => ({
     ...state,
     [field]: {
@@ -19,5 +19,3 @@ function setError(stateSetter: IStateSetter, field: string, error: ICustomError,
     }
   }));
 }
-
-export default setError;

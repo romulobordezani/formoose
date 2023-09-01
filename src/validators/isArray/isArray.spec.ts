@@ -1,4 +1,4 @@
-import { isArray } from '../index';
+import { isArray } from '@/validators';
 
 describe('[ isArray ]', () => {
   it('Boolean positive case', () => {

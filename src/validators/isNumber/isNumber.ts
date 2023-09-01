@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * @category Validators
@@ -7,7 +7,7 @@ import { ErrorHandler } from '@/core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function isNumber(value, identifier) {
+export function isNumber(value, identifier) {
   if (typeof value !== 'number') {
     ErrorHandler.throw(
       `Number expected, type sent: ${typeof value} - on field: ${identifier}`,
@@ -18,4 +18,4 @@ function isNumber(value, identifier) {
   return true;
 }
 
-export default isNumber;
+

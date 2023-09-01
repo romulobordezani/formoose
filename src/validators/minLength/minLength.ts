@@ -1,5 +1,5 @@
-import { ErrorHandler } from '@/core';
-import { isString } from '../index';
+import { ErrorHandler } from '@/core/ErrorHandler';
+import { isString } from '@/validators/isString';
 
 /**
  * @category Validators
@@ -9,7 +9,7 @@ import { isString } from '../index';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function minLength(value, size, identifier) {
+export function minLength(value, size, identifier) {
   const stringHelper = String(value);
 
   if (isString(value, identifier) && stringHelper.length < size) {
@@ -24,4 +24,4 @@ function minLength(value, size, identifier) {
   return true;
 }
 
-export default minLength;
+

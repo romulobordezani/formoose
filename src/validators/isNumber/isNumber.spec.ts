@@ -1,4 +1,4 @@
-import { isNumber } from '../index';
+import { isNumber } from '@/validators';
 
 describe('[ isNumber ]', () => {
   it('Index if it is a number', () => {

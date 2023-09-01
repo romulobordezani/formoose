@@ -1,1 +1,1 @@
-export { default } from './TypeChecker';
+export * from './TypeChecker';

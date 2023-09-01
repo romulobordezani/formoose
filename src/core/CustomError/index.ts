@@ -1,1 +1,1 @@
-export { default } from './CustomError';
+export * from './CustomError';

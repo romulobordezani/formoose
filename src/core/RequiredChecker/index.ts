@@ -1,1 +1,1 @@
-export { default } from './RequiredChecker';
+export * from './RequiredChecker';

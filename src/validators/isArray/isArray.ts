@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * @category Validators
@@ -7,7 +7,7 @@ import { ErrorHandler } from '@/core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function isArray(value, identifier) {
+export function isArray(value, identifier) {
   if (!Array.isArray(value)) {
     ErrorHandler.throw(
       `Array expected, type sent: ${typeof value} - on field: ${identifier}`,
@@ -18,4 +18,3 @@ function isArray(value, identifier) {
   return true;
 }
 
-export default isArray;

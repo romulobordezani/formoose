@@ -1,4 +1,4 @@
-import { isEmpty } from '../index';
+import { isEmpty } from '@/validators';
 
 describe('[ isEmpty ]', () => {
   it('Allows full filed string', () => {

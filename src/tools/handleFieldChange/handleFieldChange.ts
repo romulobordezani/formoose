@@ -1,4 +1,4 @@
-import FormooseTools from '../index';
+import { setValue } from '@/tools/setValue';
 import { IStateSetter } from '@/interfaces';
 
 /**
@@ -9,7 +9,7 @@ import { IStateSetter } from '@/interfaces';
  * @param {stateSetter} stateSetter
  * @param {string} field - The field to be validated
  */
-async function handleFieldChange(event: any, field: string, stateSetter: IStateSetter) {
+export async function handleFieldChange(event: any, field: string, stateSetter: IStateSetter) {
   event.persist();
   const { target } = event;
   const { type } = target;
@@ -27,7 +27,5 @@ async function handleFieldChange(event: any, field: string, stateSetter: IStateS
       break;
   }
 
-  await FormooseTools.setValue(stateSetter, field, value);
+  await setValue(stateSetter, field, value);
 }
-
-export default handleFieldChange;

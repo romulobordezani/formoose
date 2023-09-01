@@ -1,1 +1,1 @@
-export { default } from './belongToSchema.validation';
+export * from './belongToSchema.validation';

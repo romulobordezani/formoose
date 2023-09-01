@@ -7,7 +7,7 @@ import { IStateSetter } from '@/interfaces';
  * @param {IStateSetter} stateSetter
  * @param {string} field
  */
-function cleanError(stateSetter: IStateSetter, field: string) {
+export function cleanError(stateSetter: IStateSetter, field: string) {
   stateSetter(state => ({
     ...state,
     [field]: {
@@ -17,5 +17,3 @@ function cleanError(stateSetter: IStateSetter, field: string) {
     }
   }));
 }
-
-export default cleanError;

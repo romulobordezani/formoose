@@ -5,11 +5,11 @@ import { matchEnum } from '../../validators';
  * @category Validators
  * @param {checkerData} checkerData
  */
-const EnumChecker = checkerData => {
+export const EnumChecker = checkerData => {
   const { value, propsOnSchema = {}, propName } = checkerData;
   if (propsOnSchema.enum) {
     matchEnum(value, propsOnSchema.enum, propName);
   }
 };
 
-export default EnumChecker;
+

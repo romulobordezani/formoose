@@ -1,4 +1,4 @@
-import ErrorHandler from './index';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 describe('[ ERROR HANDLER ]', () => {
   it('Check if an Error was threw', () => {

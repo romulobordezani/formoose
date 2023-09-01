@@ -1,5 +1,6 @@
-import { BelongToSchema, EnsureSchema } from '../';
-import { ISchema } from "../../interfaces";
+import { BelongToSchema } from '@/core/BelongToSchema';
+import { EnsureSchema } from '@/core/EnsureSchema';
+import { ISchema } from "@/interfaces";
 
 /**
  * Main validator method, returns a Promise that throws an error
@@ -10,8 +11,8 @@ import { ISchema } from "../../interfaces";
  * @throws {ICustomError}
  * @constructor
  */
-const Validate = (
-  model: {},
+export const Validate = (
+  model: any,
   propsToValidate: string[],
   schema: ISchema
 ) =>
@@ -32,4 +33,3 @@ const Validate = (
     resolve(true);
   });
 
-export default Validate;

@@ -1,4 +1,4 @@
-import { maxLength } from '../index';
+import { maxLength } from '@/validators';
 
 describe('[ maxLength ]', () => {
   it('Check the max length positive case', () => {

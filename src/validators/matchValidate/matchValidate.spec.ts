@@ -1,4 +1,4 @@
-import { matchValidate } from '../index';
+import { matchValidate } from '@/validators';
 
 const emailValidator = email => {
   /* eslint-disable-next-line */

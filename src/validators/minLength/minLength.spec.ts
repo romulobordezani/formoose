@@ -1,4 +1,4 @@
-import { minLength } from '../index';
+import { minLength } from '@/validators';
 
 describe('[ minLength ]', () => {
   it('Check the min length positive case', () => {

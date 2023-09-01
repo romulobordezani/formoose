@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * @category Validators
@@ -8,7 +8,7 @@ import { ErrorHandler } from '@/core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function matchValidate(value, validate, identifier, message: string = 'error00002') {
+export function matchValidate(value, validate, identifier, message: string = 'error00002') {
   if (!validate(value)) {
     ErrorHandler.throw(
       `Value not passed Custom Validation ${validate.name} - on field: ${identifier}`,
@@ -19,4 +19,3 @@ function matchValidate(value, validate, identifier, message: string = 'error0000
   return true;
 }
 
-export default matchValidate;

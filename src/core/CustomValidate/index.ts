@@ -1,1 +1,1 @@
-export { default } from './CustomValidate';
+export * from './CustomValidate';

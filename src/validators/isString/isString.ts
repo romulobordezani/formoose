@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * @category Validators
@@ -7,7 +7,7 @@ import { ErrorHandler } from '@/core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function isString(value, identifier) {
+export function isString(value: string, identifier: string): boolean {
   if (typeof value !== 'string') {
     ErrorHandler.throw(
       `String expected, type sent: ${typeof value} - on field: ${identifier}`,
@@ -18,4 +18,3 @@ function isString(value, identifier) {
   return true;
 }
 
-export default isString;

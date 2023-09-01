@@ -5,7 +5,7 @@ import { matchValidate } from '../../validators';
  * @category Validators
  * @param {checkerData} checkerData
  */
-const CustomValidate = checkerData => {
+export const CustomValidate = checkerData => {
   const { value, propsOnSchema = {}, propName } = checkerData;
   const { validate } = propsOnSchema;
   if (validate) {
@@ -13,4 +13,3 @@ const CustomValidate = checkerData => {
   }
 };
 
-export default CustomValidate;

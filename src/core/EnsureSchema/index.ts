@@ -1,1 +1,1 @@
-export { default } from './EnsureSchema';
+export * from './EnsureSchema';

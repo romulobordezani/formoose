@@ -1,4 +1,6 @@
-import FormooseTools from '..';
+import { getModel } from '@/tools/getModel';
+import { cleanError } from '@/tools/cleanError';
+import { setError } from '@/tools/setError';
 import { Validate } from '@/core';
 import { ISchema, IFormData, IStateSetter } from '@/interfaces';
 
@@ -20,17 +22,17 @@ const validateOneField = (
 ) => {
   return new Promise(resolve => {
     Validate(
-      FormooseTools.getModel(formData, field),
+      getModel(formData, field),
       [field],
       schema
     )
       .then(() => {
-        FormooseTools.cleanError(stateSetter, field);
+        cleanError(stateSetter, field);
         resolve(true);
       })
 
       .catch(error => {
-        FormooseTools.setError(stateSetter, field, error, t);
+        setError(stateSetter, field, error, t);
         resolve(false);
       });
   });

@@ -1,9 +1,9 @@
-import CustomError from '../CustomError';
+import { CustomError } from '@/core/CustomError';
 
 /**
  * @category Utils
  */
-class ErrorHandler {
+export class ErrorHandler {
   /**
    * Throws a Custom Error to be used on fields and validation process
    * @param {string} message
@@ -16,5 +16,3 @@ class ErrorHandler {
     throw new CustomError(message, field, translatedMessageId, translatedMessageLocals);
   }
 }
-
-export default ErrorHandler;

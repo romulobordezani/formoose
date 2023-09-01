@@ -1,1 +1,1 @@
-export { default } from './MountFormData';
+export * from './MountFormData';

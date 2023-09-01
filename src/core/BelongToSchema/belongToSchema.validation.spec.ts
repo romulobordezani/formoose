@@ -1,6 +1,6 @@
 import { BelongToSchema } from '..';
 
-const schemaMock = {
+export const schemaMock = {
   prop1: {
     required: true,
     type: String,

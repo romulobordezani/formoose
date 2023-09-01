@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * @category Validators
@@ -7,7 +7,7 @@ import { ErrorHandler } from '@/core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function isBoolean(value, identifier) {
+export function isBoolean(value, identifier) {
   if (typeof value !== 'boolean') {
     ErrorHandler.throw(
       `Expected type boolean, sent '${typeof value}' - on field: ${identifier}`,
@@ -18,4 +18,3 @@ function isBoolean(value, identifier) {
   return true;
 }
 
-export default isBoolean;

@@ -1,4 +1,4 @@
-import { ErrorHandler } from '..';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * Belong To Schema
@@ -8,7 +8,7 @@ import { ErrorHandler } from '..';
  * @throws {CustomError} When a property is not found on Schema
  * @returns {boolean}
  */
-const BelongToSchema = (props, schema) => {
+export const BelongToSchema = (props, schema) => {
   let errorFound = '';
 
   props.map(propToCheck => {
@@ -28,4 +28,3 @@ const BelongToSchema = (props, schema) => {
   return errorFound === '';
 };
 
-export default BelongToSchema;

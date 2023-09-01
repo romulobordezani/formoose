@@ -1,1 +1,1 @@
-export { default } from './MinLengthChecker';
+export * from './MinLengthChecker';

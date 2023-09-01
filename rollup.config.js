@@ -13,7 +13,7 @@ export default {
   output: {
     dir: 'dist',
     format: 'esm',
-    preserveModules: true,
+    preserveModules: true,  
     preserveModulesRoot: 'src',
     sourcemap: true,
   },
@@ -25,6 +25,9 @@ export default {
       tsconfig: './tsconfig.json',
       declaration: true,
       declarationDir: 'dist',
+      exclude: [
+        "src/**/{test,__tests__}/**/*.{ts,tsx}",
+        "src/**/?(*.)(spec|test).{ts,tsx}"]
     }),
     // postcss(), 
     terser(),

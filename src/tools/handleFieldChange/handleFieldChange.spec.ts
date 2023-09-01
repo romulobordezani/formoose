@@ -1,4 +1,4 @@
-import FormooseTools from '../index';
+import { handleFieldChange, getModel } from '../index';
 import { formDataMock, eventMock, curryStateSetter } from '../../__mocks__';
 
 describe('[ TOOLS ][ handleFieldChange ]', () => {
@@ -9,7 +9,7 @@ describe('[ TOOLS ][ handleFieldChange ]', () => {
   });
 
   it('Feed formData with values from Dom events', () => {
-    FormooseTools.handleFieldChange(eventMock, 'field1', curryStateSetter(formData));
-    expect(FormooseTools.getModel(formData, 'field1')).toEqual({ field1: 'mockedValue' });
+    handleFieldChange(eventMock, 'field1', curryStateSetter(formData));
+    expect(getModel(formData, 'field1')).toEqual({ field1: 'mockedValue' });
   });
 });

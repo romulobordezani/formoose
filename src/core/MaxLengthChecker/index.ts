@@ -1,1 +1,1 @@
-export { default } from './MaxLengthChecker';
+export * from './MaxLengthChecker';

@@ -1,11 +1,9 @@
-import {
-  CustomValidate,
-  EnumChecker,
-  MaxLengthChecker,
-  MinLengthChecker,
-  RequiredChecker,
-  TypeChecker
-} from '..';
+import { CustomValidate } from '@/core/CustomValidate';
+import { EnumChecker } from '@/core/EnumChecker';
+import { MaxLengthChecker } from '@/core/MaxLengthChecker';
+import { MinLengthChecker } from '@/core/MinLengthChecker';
+import { RequiredChecker } from '@/core/RequiredChecker';
+import { TypeChecker } from '@/core/TypeChecker';
 
 /**
  * Ensure Schema Validation - Runs all validations needed to ensure the whole schema
@@ -13,7 +11,7 @@ import {
  * @param {checkerData} checkerData
  * @returns {boolean|null|CustomError}
  */
-const EnsureSchema = checkerData => {
+export const EnsureSchema = checkerData => {
   const { required } = checkerData.propsOnSchema;
   const { value } = checkerData;
   const validationNotNeeded = !required && (value === undefined || value === '' || value === null);
@@ -23,7 +21,7 @@ const EnsureSchema = checkerData => {
   }
 
   for (const prop in checkerData.propsOnSchema) {
-    if (checkerData.propsOnSchema.hasOwnProperty(prop)) {
+    if (Object.prototype.hasOwnProperty.call(checkerData?.propsOnSchema, prop)) {
 
       if (prop === 'type') {
         // Trows an error if value's type and Schema's type doesn't matches
@@ -60,4 +58,3 @@ const EnsureSchema = checkerData => {
   return true;
 };
 
-export default EnsureSchema;

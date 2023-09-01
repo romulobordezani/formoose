@@ -1,4 +1,4 @@
-import { isBoolean } from '../index';
+import { isBoolean } from '@/validators';
 
 describe('[ isBoolean ]', () => {
   it('Boolean positive case', () => {

@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * @category Validators
@@ -8,7 +8,7 @@ import { ErrorHandler } from '@/core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function matchEnum(value, enumObject, identifier) {
+export function matchEnum(value, enumObject, identifier) {
   const existsInEnum = Object.values(enumObject).indexOf(value) > -1;
 
   if (!existsInEnum) {
@@ -23,4 +23,4 @@ function matchEnum(value, enumObject, identifier) {
   return true;
 }
 
-export default matchEnum;
+

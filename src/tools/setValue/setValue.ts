@@ -8,7 +8,7 @@
  */
 import { IStateSetter } from '@/interfaces';
 
-async function setValue(stateSetter: IStateSetter, field: string, value: any) {
+export async function setValue(stateSetter: IStateSetter, field: string, value: any) {
   // TODO - Do not let set a new field that doesn't exists of formData
   // TODO - Better named as UpdateValue???
   await stateSetter(state => ({
@@ -19,5 +19,3 @@ async function setValue(stateSetter: IStateSetter, field: string, value: any) {
     }
   }));
 }
-
-export default setValue;

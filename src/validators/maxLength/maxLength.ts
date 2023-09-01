@@ -1,5 +1,5 @@
-import { ErrorHandler } from '@/core';
-import { isString } from '../index';
+import { ErrorHandler } from '@/core/ErrorHandler';
+import { isString } from '@/validators/isString';
 
 /**
  * @category Validators
@@ -9,7 +9,7 @@ import { isString } from '../index';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function maxLength(value: any, size: number, identifier: string) {
+export function maxLength(value: any, size: number, identifier: string) {
   const stringHelper = String(value);
   if (isString(value, identifier) && stringHelper.length > size) {
     ErrorHandler.throw(
@@ -24,4 +24,4 @@ function maxLength(value: any, size: number, identifier: string) {
   return true;
 }
 
-export default maxLength;
+

@@ -1,4 +1,4 @@
-import FormooseTools from '../index';
+import { getMaxLength } from '../index';
 import { formDataMock, schema } from '../../__mocks__';
 
 describe('[ TOOLS ][ getMaxLength ]', () => {
@@ -10,11 +10,11 @@ describe('[ TOOLS ][ getMaxLength ]', () => {
 
   it('Returns a number with Max Length', () => {
     expect(
-      FormooseTools.getMaxLength(formData, 'middleName', schema())
+      getMaxLength(formData, 'middleName', schema())
     ).toEqual(50);
   });
 
   it('Returns undefined without errors from a model without max', () => {
-    expect(FormooseTools.getMaxLength(formData, 'id', schema())).toBeUndefined();
+    expect(getMaxLength(formData, 'id', schema())).toBeUndefined();
   });
 });

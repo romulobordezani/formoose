@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core';
+import { ErrorHandler } from '@/core/ErrorHandler';
 
 /**
  * @category Validators
@@ -7,7 +7,7 @@ import { ErrorHandler } from '@/core';
  * @throws {CustomError} Throws Exception when invalid
  * @returns {boolean}
  */
-function isEmpty(value, identifier) {
+export function isEmpty(value, identifier) {
   if (value === undefined || value === null || value === '' || value.length < 1) {
     ErrorHandler.throw(
       `Required field "${identifier}" is empty, sent type '${typeof value}' with value: '${value}' - on field: ${identifier}`,
@@ -18,4 +18,4 @@ function isEmpty(value, identifier) {
   return true;
 }
 
-export default isEmpty;
+

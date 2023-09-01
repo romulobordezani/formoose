@@ -1,4 +1,6 @@
-import FormooseTools from '../index';
+import { getModel } from '@/tools/getModel';
+import { cleanError } from '@/tools/cleanError';
+import { setError } from '@/tools/setError';
 import { Validate } from '@/core';
 import { ISchema, IFormData, IStateSetter } from "../../interfaces";
 
@@ -28,15 +30,15 @@ function validateAllFieldsSync(
 
     const promiseList = Object.keys(formData).map(field =>
       Validate(
-        FormooseTools.getModel(formData, field),
+        getModel(formData, field),
         [field],
         schema
       )
         .then(() => {
-          FormooseTools.cleanError(fakeSetFormData, field);
+          cleanError(fakeSetFormData, field);
         })
         .catch(error => {
-          FormooseTools.setError(fakeSetFormData, field, error, t);
+          setError(fakeSetFormData, field, error, t);
           throw error;
         })
     );
@@ -47,6 +49,7 @@ function validateAllFieldsSync(
         resolve(true);
       })
       .catch(e => {
+        console.error(e);
         stateSetter(fakeFormData);
         reject({
           formData: fakeFormData,
