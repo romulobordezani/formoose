@@ -1,10 +1,10 @@
-import { CustomValidate } from '@/core/CustomValidate';
-import { EnumChecker } from '@/core/EnumChecker';
-import { MaxLengthChecker } from '@/core/MaxLengthChecker';
-import { MinLengthChecker } from '@/core/MinLengthChecker';
-import { RequiredChecker } from '@/core/RequiredChecker';
-import { TypeChecker } from '@/core/TypeChecker';
+import { CustomValidate } from '../CustomValidate';
+import { EnumChecker } from '../EnumChecker';
+import { MaxLengthChecker } from '../MaxLengthChecker';
+import { MinLengthChecker } from '../MinLengthChecker';
+import { RequiredChecker } from '../RequiredChecker';
 
+import { TypeChecker } from '../TypeChecker';
 /**
  * Ensure Schema Validation - Runs all validations needed to ensure the whole schema
  * @category Validators

@@ -3,9 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/core": ["src/core"],
+      "@/tools": ["src/tools"],
+      "@/validators": ["src/validators"],
+      "@/interfaces": ["src/interfaces"],
+      "@/custom-errors": ["src/custom-errors"]
     },
     "outDir": "dist",
     "sourceMap": true,
@@ -25,15 +27,15 @@
     ],
     "declaration": true,
     "strict": false,
+    "resolveJsonModule": true
   },
   "compileOnSave": true,
   "include": [
-    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "node_modules/@types"
   ],
   "exclude": [
-    "node_modules",
-    "src/**/{test,__tests__}/**/*.{ts,tsx}",
-    "src/**/?(*.)(spec|test).{ts,tsx}"
+    "node_modules"
   ]
 }

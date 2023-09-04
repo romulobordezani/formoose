@@ -1,6 +1,6 @@
 import { setError } from '@/tools';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
-import { CustomError } from '@/core';
+import { CustomError } from '@/custom-errors';
 
 describe('[ TOOLS ][ setError ]', () => {
   let formData;

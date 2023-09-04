@@ -1,5 +1,5 @@
-import { ErrorHandler } from '@/core/ErrorHandler';
-import { isString } from '@/validators/isString';
+import { ErrorHandler } from '@/custom-errors';
+import { isString } from '../isString';
 
 /**
  * @category Validators

@@ -1,5 +1,5 @@
-import { ErrorHandler } from '@/core/ErrorHandler';
-import { isString } from '@/validators/isString';
+import { ErrorHandler } from '@/custom-errors';
+import { isString } from '../isString';
 
 /**
  * @category Validators
@@ -11,6 +11,7 @@ import { isString } from '@/validators/isString';
  */
 export function maxLength(value: any, size: number, identifier: string) {
   const stringHelper = String(value);
+  
   if (isString(value, identifier) && stringHelper.length > size) {
     ErrorHandler.throw(
       `String exceed the size of ${size} characters with ${

@@ -1,6 +1,6 @@
 import { ISchema, IFormData } from '@/interfaces';
 
-const MountFormData = (schema: ISchema) => {
+export const mountFormData = (schema: ISchema) => {
   const formData: IFormData = {};
 
   Object.keys(schema).map((key: string) => {
@@ -13,6 +13,4 @@ const MountFormData = (schema: ISchema) => {
 
   return formData;
 };
-
-export default MountFormData;
 

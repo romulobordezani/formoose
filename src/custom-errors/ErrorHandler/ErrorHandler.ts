@@ -1,4 +1,4 @@
-import { CustomError } from '@/core/CustomError';
+import { CustomError } from '../CustomError';
 
 /**
  * @category Utils

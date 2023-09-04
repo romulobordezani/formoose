@@ -1,6 +1,6 @@
 import { setError, cleanError } from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
-import { CustomError } from '@/core';
+import { CustomError } from '@/custom-errors';
 
 describe('[ Clean Error - Index Util ]', () => {
   let formData;

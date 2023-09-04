@@ -1,4 +1,4 @@
-import { setValue } from '@/tools/setValue';
+import { setValue } from '../setValue';
 import { IStateSetter } from '@/interfaces';
 
 /**

@@ -1,5 +1,5 @@
-import { BelongToSchema } from '@/core/BelongToSchema';
-import { EnsureSchema } from '@/core/EnsureSchema';
+import {  EnsureSchema } from '../EnsureSchema';
+import { BelongToSchema } from '../BelongToSchema';
 import { ISchema } from "@/interfaces";
 
 /**

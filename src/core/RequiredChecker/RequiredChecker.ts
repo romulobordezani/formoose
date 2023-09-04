@@ -1,4 +1,4 @@
-import { isEmpty } from '../../validators';
+import { isEmpty } from '@/validators';
 
 /**
  * Checks if required value is fulfilled

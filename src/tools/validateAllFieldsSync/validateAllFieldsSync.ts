@@ -1,6 +1,7 @@
-import { getModel } from '@/tools/getModel';
-import { cleanError } from '@/tools/cleanError';
-import { setError } from '@/tools/setError';
+import { getModel,  } from '../getModel';
+import { cleanError } from '../cleanError';
+import { setError } from '../setError';
+
 import { Validate } from '@/core';
 import { ISchema, IFormData, IStateSetter } from "../../interfaces";
 

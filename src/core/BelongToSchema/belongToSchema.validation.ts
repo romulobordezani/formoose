@@ -1,4 +1,4 @@
-import { ErrorHandler } from '@/core/ErrorHandler';
+import { ErrorHandler } from '../../custom-errors/ErrorHandler';
 
 /**
  * Belong To Schema
