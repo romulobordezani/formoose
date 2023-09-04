@@ -15,6 +15,7 @@ export function isString(value: string, identifier: string): boolean {
       'error00001'
     );
   }
+
   return true;
 }
 

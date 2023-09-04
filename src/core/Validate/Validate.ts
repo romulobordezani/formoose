@@ -1,5 +1,5 @@
 import {  EnsureSchema } from '../EnsureSchema';
-import { BelongToSchema } from '../BelongToSchema';
+import { checkIfBelongsToSchema } from '../checkIfBelongsToSchema';
 import { ISchema } from "@/interfaces";
 
 /**
@@ -19,7 +19,7 @@ export const Validate = (
   new Promise(resolve => {
 
     // Throws an error when detects an unknown prop, not listed in the Schema
-    BelongToSchema(propsToValidate, schema);
+    checkIfBelongsToSchema(propsToValidate, schema);
 
     // Iterates the whole list of props, get theirs values from model and applies validations related on schema
     propsToValidate.map(prop =>

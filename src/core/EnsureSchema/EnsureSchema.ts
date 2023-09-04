@@ -1,17 +1,19 @@
+import { CustomError } from '@/custom-errors';
 import { CustomValidate } from '../CustomValidate';
 import { EnumChecker } from '../EnumChecker';
 import { MaxLengthChecker } from '../MaxLengthChecker';
 import { MinLengthChecker } from '../MinLengthChecker';
 import { RequiredChecker } from '../RequiredChecker';
-
 import { TypeChecker } from '../TypeChecker';
+import { ICheckerData } from 'src/interfaces/IChekerData';
+
 /**
  * Ensure Schema Validation - Runs all validations needed to ensure the whole schema
  * @category Validators
- * @param {checkerData} checkerData
+ * @param {ICheckerData} checkerData
  * @returns {boolean|null|CustomError}
  */
-export const EnsureSchema = checkerData => {
+export const EnsureSchema = (checkerData: ICheckerData): boolean | null | CustomError => {
   const { required } = checkerData.propsOnSchema;
   const { value } = checkerData;
   const validationNotNeeded = !required && (value === undefined || value === '' || value === null);

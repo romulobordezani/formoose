@@ -1,14 +1,15 @@
-import { BelongToSchema } from '..';
+import { TypesEnum } from '@/interfaces';
+import { checkIfBelongsToSchema } from '..';
 
 export const schemaMock = {
   prop1: {
     required: true,
-    type: String,
+    type: TypesEnum.String,
     unique: true
   },
   prop2: {
     required: true,
-    type: String
+    type: TypesEnum.String
   }
 };
 
@@ -20,7 +21,7 @@ describe('[ BELONG TO SCHEMA ]', () => {
         'prop2'
       ];
       expect(
-        BelongToSchema(expectedPropsOnSchema, schemaMock)
+        checkIfBelongsToSchema(expectedPropsOnSchema, schemaMock)
       ).toBeTruthy();
     });
   });
@@ -31,7 +32,7 @@ describe('[ BELONG TO SCHEMA ]', () => {
         'prop3'
       ];
       expect(() => {
-        BelongToSchema(unexpectedPropsOnSchema, schemaMock);
+        checkIfBelongsToSchema(unexpectedPropsOnSchema, schemaMock);
       }).toThrow(new Error(`${unexpectedPropsOnSchema} not found on Schema.`));
     });
   });

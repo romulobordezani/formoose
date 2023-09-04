@@ -1,13 +1,17 @@
+import { ICheckerData } from 'src/interfaces/IChekerData';
 import { matchValidate } from '../../validators';
 
 /**
- * Custom Index
+ * Custom Validate
  * @category Validators
- * @param {checkerData} checkerData
+ * @param {ICheckerData} checkerData
  */
-export const CustomValidate = checkerData => {
-  const { value, propsOnSchema = {}, propName } = checkerData;
-  const { validate } = propsOnSchema;
+
+// STOPED HERE => Adding tests and making it work
+export const CustomValidate = (checkerData: ICheckerData) => {
+  const { value, propsOnSchema, propName } = checkerData;
+  const { validate } = propsOnSchema[propName];
+
   if (validate) {
     matchValidate(value, validate.callback, propName, validate.message);
   }

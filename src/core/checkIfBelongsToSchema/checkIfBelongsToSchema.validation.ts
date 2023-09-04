@@ -1,20 +1,21 @@
+import { ISchema } from '@/interfaces';
 import { ErrorHandler } from '../../custom-errors/ErrorHandler';
 
 /**
- * Belong To Schema
+ * checkIfBelongsToSchema
  * @category Validators
- * @param {string[]} props Properties to check if exists on Schema
+ * @param {string[]} props Properties to check existance on Schema
  * @param {Schema} schema
  * @throws {CustomError} When a property is not found on Schema
  * @returns {boolean}
  */
-export const BelongToSchema = (props, schema) => {
+export const checkIfBelongsToSchema = (props: string[], schema: ISchema): boolean => {
   let errorFound = '';
 
   props.map(propToCheck => {
-    const notHasPropertyOnSchema = !Object.prototype.hasOwnProperty.call(schema, propToCheck);
+    const doesNotHasPropertyOnSchema = !Object.prototype.hasOwnProperty.call(schema, propToCheck);
 
-    if (notHasPropertyOnSchema) {
+    if (doesNotHasPropertyOnSchema) {
       errorFound = `${propToCheck} not found on Schema.`;
     }
 

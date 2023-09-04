@@ -1,10 +1,13 @@
-import { ICustomError, TypesEnum } from '.';
+import { TypesEnum } from '.';
 
 export interface ISchemaItem {
   max?: number | undefined,
-  min?: number  | undefined,
-  required?: boolean  | undefined,
+  min?: number | undefined,
+  required?: boolean | undefined,
   type: TypesEnum,
-  validate?: () => ICustomError,
+  validate?: {
+    callback: () => boolean,
+    message: string
+  },
   enum?: Record<string, string>
 }

@@ -1,4 +1,4 @@
-export * from './BelongToSchema';
+export * from './checkIfBelongsToSchema';
 // export * from './TypeChecker';
 export * from './RequiredChecker';
 export * from './MinLengthChecker';

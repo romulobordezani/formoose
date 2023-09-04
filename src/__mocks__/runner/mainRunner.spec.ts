@@ -14,6 +14,7 @@ describe('[ VALIDATIONS RUNNER ]', () => {
         'email',
         'middleName'
       ], schema());
+      
       expect(result).toBeTruthy();
     });
   });
