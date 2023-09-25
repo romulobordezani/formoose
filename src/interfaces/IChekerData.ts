@@ -1,7 +1,7 @@
-import { ISchema } from './ISchema';
+import { ISchemaItem } from './IschemaItem';
 
 export type ICheckerData = {
     propName: string,
-    propsOnSchema: ISchema,
+    propsOnSchema: ISchemaItem,
     value: string
 }

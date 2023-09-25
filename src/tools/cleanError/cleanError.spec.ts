@@ -1,26 +1,27 @@
 import { setError, cleanError } from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
 import { CustomError } from '@/custom-errors';
+import { FormState } from '../../interfaces';
 
-describe('[ Clean Error - Index Util ]', () => {
-  let formData;
+describe('cleanError()', () => {
+  let formState: FormState;
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formState = Object.assign({}, formDataMock);
   });
 
   it('Removes any error in a formData', () => {
     const fakeError = new CustomError('Fake Error');
 
     setError(
-      curryStateSetter(formData),
+      curryStateSetter(formState), 
       'field1',
       fakeError,
       () => null
     );
 
-    cleanError(curryStateSetter(formData), 'field1');
+    cleanError(curryStateSetter(formState), 'field1');
     
-    expect(formData.field1.error).toBeNull();
+    expect(formState.field1.error).toBeNull();
   });
 });

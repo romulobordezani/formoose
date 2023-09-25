@@ -8,7 +8,7 @@ describe('[ TOOLS ][ updateFormDataValues ]', () => {
 
   beforeEach(() => {
     formData = mountFormData(schema());
-    setValue(curryStateSetter(formData),'email', 'romulobordezani@gmail.com');
+    setValue(curryStateSetter(formData), 'email', 'romulobordezani@gmail.com');
     UserMock = getSimpleObject(formData);
   });
 

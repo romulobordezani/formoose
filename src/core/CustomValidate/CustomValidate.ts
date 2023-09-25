@@ -7,7 +7,7 @@ import { matchValidate } from '../../validators';
  * @param {ICheckerData} checkerData
  */
 
-// STOPED HERE => Adding tests and making it work
+// TODO - STOPED HERE => Adding tests and making it work
 export const CustomValidate = (checkerData: ICheckerData) => {
   const { value, propsOnSchema, propName } = checkerData;
   const { validate } = propsOnSchema[propName];
@@ -16,4 +16,3 @@ export const CustomValidate = (checkerData: ICheckerData) => {
     matchValidate(value, validate.callback, propName, validate.message);
   }
 };
-

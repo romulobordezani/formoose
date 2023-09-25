@@ -1,4 +1,4 @@
-import { IFormData, IModel } from "../../interfaces";
+import { FormState, IModel } from "../../interfaces";
 
 /**
  * Updates all form data based on an User
@@ -9,7 +9,7 @@ import { IFormData, IModel } from "../../interfaces";
  * @returns {void}
  */
 function updateFormDataValues(
-  formData: IFormData,
+  formData: FormState,
   model: IModel
 ) {
   const objectAdapter = {};

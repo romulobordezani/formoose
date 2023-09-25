@@ -2,13 +2,13 @@ import { getModel,  } from '../getModel';
 import { cleanError } from '../cleanError';
 import { setError } from '../setError';
 import { Validate } from '@/core';
-import { ISchema, IFormData, IStateSetter } from '@/interfaces';
+import { ISchema, FormState, IStateSetter } from '@/interfaces';
 
 /**
  * Method to validate only one field and set related errors and messages
  * @param {string} field
  * @param {ISchema} schema
- * @param {IFormData} formData
+ * @param {FormState} formData
  * @param {IStateSetter} stateSetter
  * @param t
  * @returns {*}
@@ -16,8 +16,8 @@ import { ISchema, IFormData, IStateSetter } from '@/interfaces';
 const validateOneField = (
   field: string,
   schema: ISchema,
-  formData: IFormData,
-  stateSetter: IStateSetter,
+  formData: FormState,
+  stateSetter: IStateSetter<FormState>,
   t: (any)
 ) => {
   return new Promise(resolve => {

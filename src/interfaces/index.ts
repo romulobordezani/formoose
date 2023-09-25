@@ -6,6 +6,6 @@ export * from './ISchemaGetter';
 export * from './IStateSetter';
 
 export *  from './IModel';
-export *  from './IField';
-export *  from './IFormData';
+export *  from './FieldProperties';
+export *  from './FormState';
 export *  from './Types.enum';

@@ -1,7 +1,7 @@
-import { ISchema, IFormData } from '@/interfaces';
+import { ISchema, FormState } from '@/interfaces';
 
 export const mountFormData = (schema: ISchema) => {
-  const formData: IFormData = {};
+  const formData: FormState = {};
 
   Object.keys(schema).map((key: string) => {
     return formData[key] = {

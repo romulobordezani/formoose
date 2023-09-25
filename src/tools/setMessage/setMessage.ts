@@ -1,4 +1,4 @@
-import { IStateSetter } from '@/interfaces';
+import { FormState, IStateSetter } from '@/interfaces';
 
 /**
  * Shared Method to Set a message in a specific Field
@@ -8,7 +8,7 @@ import { IStateSetter } from '@/interfaces';
  * @param {string} field - The field to set the error
  * @param {string} message
  */
-function setMessage(stateSetter: IStateSetter, field: string, message: string) {
+function setMessage(stateSetter: IStateSetter<FormState>, field: string, message: string) {
   stateSetter(state => ({
     ...state,
     [field]: {

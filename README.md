@@ -99,19 +99,22 @@ Also, I got a road-map, help wanted 😊
 * Support casting to transform automatically convertible Types like strings in Dates, Numbers in Strings, etc. 
 * Support Schemas parenting and inheritance
 * Support touched, pristine and dirty states natively within the Field Interface
-
+* Support type inference
+* Add Husky to prevent bad commits
+* Remove tSup
+ 
 
 #### Running the core project
 ```shell
-npm install
+yarn
 ```
 
 ```shell
-npm start
+yarn start
 ```
 
 ```shell
-npm run test
+yarn run test
 ```
 
 Type Script will compile to `dist` folder, use `npm link` within the example repository to run and debug your changes.

@@ -1,6 +1,6 @@
-import { IFormData } from '@/interfaces';
+import { FormState } from '@/interfaces';
 
-export function getModel(formData: IFormData, field: string) {
+export function getModel(formData: FormState, field: string) {
   return {
     [field]: formData[field].value
   };

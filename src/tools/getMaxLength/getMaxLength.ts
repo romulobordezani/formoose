@@ -1,4 +1,4 @@
-import { IFormData, ISchema } from '@/interfaces';
+import { FormState, ISchema } from '@/interfaces';
 
 /**
  * A tool to get MaxLength info from a schema
@@ -9,7 +9,7 @@ import { IFormData, ISchema } from '@/interfaces';
  * @param schema
  * @returns {Object} - Simulation of model
  */
-function getMaxLength(formData: IFormData, field: string, schema: ISchema) {
+function getMaxLength(formData: FormState, field: string, schema: ISchema) {
   return schema[field].max;
 }
 
