@@ -1,5 +1,5 @@
 import { setValue } from '../setValue';
-import { FormState, IStateSetter } from '@/interfaces';
+import { FormState, StateSetter } from '@/interfaces';
 
 /**
  * Shared Method to manipulate FieldChanges
@@ -9,7 +9,7 @@ import { FormState, IStateSetter } from '@/interfaces';
  * @param {stateSetter} stateSetter
  * @param {string} field - The field to be validated
  */
-export async function handleFieldChange(event: any, field: string, stateSetter: IStateSetter<FormState>) {
+export async function handleFieldChange(event: any, field: string, stateSetter: StateSetter<FormState>) {
   event.persist();
   const { target } = event;
   const { type } = target;

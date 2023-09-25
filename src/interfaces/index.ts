@@ -3,7 +3,7 @@ export * from './ICustomError';
 export * from './ISchema';
 export * from './IschemaItem';
 export * from './ISchemaGetter';
-export * from './IStateSetter';
+export * from './StateSetter';
 
 export *  from './IModel';
 export *  from './FieldProperties';

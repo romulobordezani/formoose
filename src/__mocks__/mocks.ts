@@ -1,12 +1,12 @@
 import schema from './runner/schema';
 import { mountFormData } from '../tools';
-import { FormState, IStateSetter } from "../interfaces";
+import { FormState, StateSetter } from "../interfaces";
 
 /**
  * Encapsulates formData with a curry call, simulating a React Hook setState
  * @param {FormState} formData
  */
-export const curryStateSetter_2: IStateSetter<FormState> = 
+export const curryStateSetter_2: StateSetter<FormState> = 
   (formData: FormState) => 
   (prevState: (arg0: FormState) => FormState) => {
     if (typeof prevState === 'object') {

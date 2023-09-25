@@ -2,7 +2,7 @@ import { setError } from '@/tools';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
 import { CustomError } from '@/custom-errors';
 
-describe('[ TOOLS ][ setError ]', () => {
+describe('[ TOOLS ][ setError() ]', () => {
   let formData;
 
   beforeEach(() => {
@@ -21,7 +21,7 @@ describe('[ TOOLS ][ setError ]', () => {
     );
 
     expect(formData.field1).toMatchObject({
-      error: true,
+      error: fakeError,
       message: 'got an error'
     });
   });

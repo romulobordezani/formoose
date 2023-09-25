@@ -1,4 +1,4 @@
-import { FormState, ISchemaGetter, IModel, ISchema, IStateSetter } from "@/interfaces";
+import { FormState, ISchemaGetter, IModel, ISchema, StateSetter } from "@/interfaces";
 
 export class Formoose {
   private schema: ISchema;
@@ -11,7 +11,7 @@ export class Formoose {
     schema: ISchemaGetter,
     t: (any) = translatorKey => translatorKey,
     formData: FormState = {},
-    stateSetter: IStateSetter<FormState> = state => state,
+    stateSetter: StateSetter<FormState> = state => state,
     model?: IModel
   ) {
     this.schemaGetter = schema;
@@ -29,11 +29,11 @@ export class Formoose {
     this._formData = formData;
   }
 
-  get stateSetter(): IStateSetter<FormState> {
-    return this._stateSetter as IStateSetter<FormState>;
+  get stateSetter(): StateSetter<FormState> {
+    return this._stateSetter as StateSetter<FormState>;
   }
 
-  set stateSetter(stateSetter: IStateSetter<FormState>) {
+  set stateSetter(stateSetter: StateSetter<FormState>) {
     this._stateSetter = stateSetter;
   }
 }

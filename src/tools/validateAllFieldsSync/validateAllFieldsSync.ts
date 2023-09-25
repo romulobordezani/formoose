@@ -3,7 +3,7 @@ import { cleanError } from '../cleanError';
 import { setError } from '../setError';
 
 import { Validate } from '@/core';
-import { ISchema, FormState, IStateSetter } from "../../interfaces";
+import { ISchema, FormState, StateSetter } from "../../interfaces";
 
 /**
  * Shared Method To validateAllFieldsSync Fields in a Form, returning if all them are valid or not
@@ -18,7 +18,7 @@ import { ISchema, FormState, IStateSetter } from "../../interfaces";
 function validateAllFieldsSync(
   schema: ISchema,
   formData: FormState,
-  stateSetter: IStateSetter<FormState>,
+  stateSetter: StateSetter<FormState>,
   t: (any)
 ) {
   return new Promise((resolve, reject) => {

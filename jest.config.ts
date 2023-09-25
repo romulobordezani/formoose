@@ -12,7 +12,8 @@ const config: JestConfigWithTsJest = {
     WebApp: true
   },
   verbose: true,
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths /*, { prefix: '<rootDir>/' } */),
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
+  modulePathIgnorePatterns: ["<rootDir>/dist/"]
 };
 
 export default config;
