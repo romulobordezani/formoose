@@ -9,11 +9,17 @@ import { ErrorHandler } from '../../custom-errors/ErrorHandler';
  * @throws {CustomError} When a property is not found on Schema
  * @returns {boolean}
  */
-export const checkIfBelongsToSchema = (props: string[], schema: ISchema): boolean => {
+export const checkIfBelongsToSchema = (
+  props: string[],
+  schema: ISchema
+): boolean => {
   let errorFound = '';
 
-  props.map(propToCheck => {
-    const doesNotHasPropertyOnSchema = !Object.prototype.hasOwnProperty.call(schema, propToCheck);
+  props.map((propToCheck) => {
+    const doesNotHasPropertyOnSchema = !Object.prototype.hasOwnProperty.call(
+      schema,
+      propToCheck
+    );
 
     if (doesNotHasPropertyOnSchema) {
       errorFound = `${propToCheck} not found on Schema.`;
@@ -28,4 +34,3 @@ export const checkIfBelongsToSchema = (props: string[], schema: ISchema): boolea
 
   return errorFound === '';
 };
-

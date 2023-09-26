@@ -17,5 +17,3 @@ export function isNumber(value, identifier) {
   }
   return true;
 }
-
-

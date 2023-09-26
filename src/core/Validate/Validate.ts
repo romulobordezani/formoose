@@ -1,6 +1,6 @@
-import {  EnsureSchema } from '../EnsureSchema';
+import { EnsureSchema } from '../EnsureSchema';
 import { checkIfBelongsToSchema } from '../checkIfBelongsToSchema';
-import { ISchema } from "@/interfaces";
+import { ISchema } from '@/interfaces';
 
 /**
  * Main validator method, returns a Promise that throws an error
@@ -16,13 +16,12 @@ export const Validate = (
   propsToValidate: string[],
   schema: ISchema
 ) =>
-  new Promise(resolve => {
-
+  new Promise((resolve) => {
     // Throws an error when detects an unknown prop, not listed in the Schema
     checkIfBelongsToSchema(propsToValidate, schema);
 
     // Iterates the whole list of props, get theirs values from model and applies validations related on schema
-    propsToValidate.map(prop =>
+    propsToValidate.map((prop) =>
       EnsureSchema({
         propName: prop,
         propsOnSchema: schema[prop],
@@ -32,4 +31,3 @@ export const Validate = (
 
     resolve(true);
   });
-

@@ -1,34 +1,29 @@
-import { validateOneField, setValue, getSimpleObject, mountFormData } from '../';
-import { curryStateSetter, schema} from '../../__mocks__';
+import { validateOneField, setValue, mountFormData } from '../';
+import { curryStateSetter, schema } from '../../__mocks__';
 
 describe('[ TOOLS ][ validateOneField ]', () => {
   let formData;
-  let modelMock;
 
   beforeEach(() => {
     formData = mountFormData(schema());
-    modelMock = getSimpleObject(formData);
   });
 
   afterEach(() => {
     formData = mountFormData(schema());
-    modelMock = getSimpleObject(formData);
   });
 
   it('Successful values pass by without errors', async () => {
-    setValue(curryStateSetter(formData),'email', 'romulobordezani@gmail.com');
+    setValue(curryStateSetter(formData), 'email', 'romulobordezani@gmail.com');
 
     const validationResponse = await validateOneField(
       'email',
       schema(),
       formData,
       curryStateSetter(formData),
-      translatedMessageId => translatedMessageId
+      (translatedMessageId) => translatedMessageId
     );
 
-    expect(
-      validationResponse
-    ).toBeTruthy();
+    expect(validationResponse).toBeTruthy();
   });
 
   it('Detects errors and throw a CustomError', async () => {
@@ -39,7 +34,7 @@ describe('[ TOOLS ][ validateOneField ]', () => {
       schema(),
       formData,
       curryStateSetter(formData),
-      translatedMessageId => translatedMessageId
+      (translatedMessageId) => translatedMessageId
     );
 
     expect(formData.email.error).toBeTruthy();

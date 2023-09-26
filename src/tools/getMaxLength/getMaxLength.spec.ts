@@ -9,9 +9,7 @@ describe('[ TOOLS ][ getMaxLength ]', () => {
   });
 
   it('Returns a number with Max Length', () => {
-    expect(
-      getMaxLength(formData, 'middleName', schema())
-    ).toEqual(50);
+    expect(getMaxLength(formData, 'middleName', schema())).toEqual(50);
   });
 
   it('Returns undefined without errors from a model without max', () => {

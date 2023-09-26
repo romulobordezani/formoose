@@ -13,15 +13,10 @@ describe('cleanError()', () => {
   it('Removes any error in a formData', () => {
     const fakeError = new CustomError('Fake Error');
 
-    setError(
-      curryStateSetter(formState), 
-      'field1',
-      fakeError,
-      () => null
-    );
+    setError(curryStateSetter(formState), 'field1', fakeError, () => null);
 
     cleanError(curryStateSetter(formState), 'field1');
-    
+
     expect(formState.field1.error).toBeNull();
   });
 });

@@ -13,14 +13,17 @@ export function setError(
   stateSetter: StateSetter<FormState>,
   field: string,
   error: ICustomError,
-  translation: (any)
+  translation: any
 ) {
   stateSetter((state: FormState) => ({
     ...state,
     [field]: {
       ...state[field],
       error,
-      message: translation(error?.translatedMessageId, error?.translatedMessageLocals)
+      message: translation(
+        error?.translatedMessageId,
+        error?.translatedMessageLocals
+      )
     }
   }));
 }

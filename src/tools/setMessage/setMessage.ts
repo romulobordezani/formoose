@@ -8,8 +8,12 @@ import { FormState, StateSetter } from '@/interfaces';
  * @param {string} field - The field to set the error
  * @param {string} message
  */
-function setMessage(stateSetter: StateSetter<FormState>, field: string, message: string) {
-  stateSetter(state => ({
+function setMessage(
+  stateSetter: StateSetter<FormState>,
+  field: string,
+  message: string
+) {
+  stateSetter((state) => ({
     ...state,
     [field]: {
       ...state[field],

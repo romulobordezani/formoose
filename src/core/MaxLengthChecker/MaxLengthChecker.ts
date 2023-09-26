@@ -5,10 +5,9 @@ import { maxLength } from '../../validators';
  * @category Validators
  * @param {checkerData} checkerData
  */
-export const MaxLengthChecker = checkerData => {
+export const MaxLengthChecker = (checkerData) => {
   const { value, propsOnSchema = {}, propName } = checkerData;
   if (propsOnSchema.max) {
     maxLength(value, propsOnSchema.max, propName);
   }
 };
-

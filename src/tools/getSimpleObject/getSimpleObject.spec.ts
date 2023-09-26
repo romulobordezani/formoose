@@ -13,9 +13,7 @@ describe('[ TOOLS ][ getSimpleObject ]', () => {
   });
 
   it('Returns a single key > value Object from a formData', () => {
-    expect(
-      getSimpleObject(formData)
-    ).toMatchObject({
+    expect(getSimpleObject(formData)).toMatchObject({
       firstName: finalValue,
       lastName: finalValue
     });
@@ -26,9 +24,7 @@ describe('[ TOOLS ][ getSimpleObject ]', () => {
   });
 
   it('Returns empty values too', () => {
-    expect(
-      getSimpleObject(formData, null, true)
-    ).toStrictEqual({
+    expect(getSimpleObject(formData, null, true)).toStrictEqual({
       email: '',
       firstName: finalValue,
       id: '',
@@ -42,14 +38,11 @@ describe('[ TOOLS ][ getSimpleObject ]', () => {
   });
 
   it('Returns filtered fields', () => {
-    expect(
-      getSimpleObject(formData, ['firstName'], true)
-    ).toStrictEqual({
+    expect(getSimpleObject(formData, ['firstName'], true)).toStrictEqual({
       email: '',
       id: '',
       lastName: finalValue,
       middleName: ''
     });
   });
-
 });

@@ -26,4 +26,4 @@ export {
   getSimpleObject,
   validateAllFieldsSync,
   validateOneField
-}
+};

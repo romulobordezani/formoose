@@ -10,14 +10,13 @@ describe('[ TOOLS ][ setError() ]', () => {
   });
 
   it('Sets an error as true in the formData model', () => {
-
     const fakeError = new CustomError('Fake Error', 'field1', 'got an error');
 
     setError(
       curryStateSetter(formData),
       'field1',
       fakeError,
-      translatedMessageId => translatedMessageId
+      (translatedMessageId) => translatedMessageId
     );
 
     expect(formData.field1).toMatchObject({

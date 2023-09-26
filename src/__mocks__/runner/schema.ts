@@ -1,12 +1,11 @@
-import { ISchemaGetter, TypesEnum } from "../../interfaces";
+import { ISchemaGetter, TypesEnum } from '../../interfaces';
 
 const schema: ISchemaGetter = () => {
   return {
-
     email: {
       max: 50,
       required: true,
-      type: TypesEnum.String,
+      type: TypesEnum.String
     },
 
     firstName: {

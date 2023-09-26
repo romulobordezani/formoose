@@ -1,6 +1,6 @@
 import { getSimpleObject, setValue, updateFormDataValues } from '../';
 import { curryStateSetter, schema } from '../../__mocks__';
-import { mountFormData } from "../../tools";
+import { mountFormData } from '../../tools';
 
 describe('[ TOOLS ][ updateFormDataValues ]', () => {
   let formData;

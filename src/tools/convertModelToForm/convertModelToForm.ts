@@ -8,12 +8,10 @@ import { IModel } from '@/interfaces';
  * @param {IModel} model User Model Abstraction
  * @returns {IFormData}
  */
-function convertModelToForm(
-  model: IModel
-) {
+function convertModelToForm(model: IModel) {
   const objectAdapter = {};
 
-  Object.keys(model).map(key => {
+  Object.keys(model).map((key) => {
     objectAdapter[key] = {
       error: null,
       message: null,

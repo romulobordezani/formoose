@@ -1,3 +1,3 @@
 export interface IModel {
-  [key: string]: string
+  [key: string]: string;
 }

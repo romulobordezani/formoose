@@ -17,4 +17,3 @@ export function isArray(value, identifier) {
   }
   return true;
 }
-

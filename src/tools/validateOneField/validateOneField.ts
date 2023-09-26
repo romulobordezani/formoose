@@ -1,4 +1,4 @@
-import { getModel,  } from '../getModel';
+import { getModel } from '../getModel';
 import { cleanError } from '../cleanError';
 import { setError } from '../setError';
 import { Validate } from '@/core';
@@ -18,29 +18,20 @@ const validateOneField = (
   schema: ISchema,
   formData: FormState,
   stateSetter: StateSetter<FormState>,
-  t: (any)
+  t: any
 ) => {
-  return new Promise(resolve => {
-    Validate(
-      getModel(formData, field),
-      [field],
-      schema
-    )
+  return new Promise((resolve) => {
+    Validate(getModel(formData, field), [field], schema)
       .then(() => {
         cleanError(stateSetter, field);
         resolve(true);
       })
 
-      .catch(error => {
+      .catch((error) => {
         setError(stateSetter, field, error, t);
         resolve(false);
       });
   });
 };
 
-
 export default validateOneField;
-
-
-
-

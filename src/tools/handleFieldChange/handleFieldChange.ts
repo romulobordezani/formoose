@@ -9,13 +9,17 @@ import { FormState, StateSetter } from '@/interfaces';
  * @param {stateSetter} stateSetter
  * @param {string} field - The field to be validated
  */
-export async function handleFieldChange(event: any, field: string, stateSetter: StateSetter<FormState>) {
+export async function handleFieldChange(
+  event: any,
+  field: string,
+  stateSetter: StateSetter<FormState>
+) {
   event.persist();
   const { target } = event;
   const { type } = target;
   let value = null;
 
-  switch(type) {
+  switch (type) {
     case 'radio':
       value = target.value;
       break;

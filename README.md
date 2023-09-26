@@ -101,7 +101,6 @@ Also, I got a road-map, help wanted 😊
 * Support touched, pristine and dirty states natively within the Field Interface
 * Support type inference
 * Add Husky to prevent bad commits
-* Remove tSup
  
 
 #### Running the core project

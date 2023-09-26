@@ -14,14 +14,10 @@ export function minLength(value, size, identifier) {
 
   if (isString(value, identifier) && stringHelper.length < size) {
     ErrorHandler.throw(
-      `String with length of ${
-        stringHelper.length
-      }, expected at least ${size} characters - on field: ${identifier}`,
+      `String with length of ${stringHelper.length}, expected at least ${size} characters - on field: ${identifier}`,
       identifier,
       'error00008'
     );
   }
   return true;
 }
-
-

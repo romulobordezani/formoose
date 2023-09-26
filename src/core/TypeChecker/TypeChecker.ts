@@ -1,6 +1,6 @@
 import { isString, isNumber, isBoolean, isArray } from '@/validators';
 
-export const getTypeValidator = primitiveTypeName => {
+export const getTypeValidator = (primitiveTypeName) => {
   const types = {
     Array: isArray,
     Boolean: isBoolean,
@@ -12,7 +12,11 @@ export const getTypeValidator = primitiveTypeName => {
   return types[primitiveTypeName] || types.default;
 };
 
-export const TypeChecker = (checkerData: { value: any; propsOnSchema: any; propName: any; }) => {
+export const TypeChecker = (checkerData: {
+  value: any;
+  propsOnSchema: any;
+  propName: any;
+}) => {
   const { value, propsOnSchema, propName } = checkerData;
   getTypeValidator(propsOnSchema.type.name)(value, propName);
 };

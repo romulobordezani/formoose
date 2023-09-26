@@ -5,10 +5,9 @@ import { isEmpty } from '@/validators';
  * @category Validators
  * @param {checkerData} checkerData
  */
-export const RequiredChecker = checkerData => {
+export const RequiredChecker = (checkerData) => {
   const { value, propsOnSchema = {}, propName } = checkerData;
   if (propsOnSchema.required) {
     isEmpty(value, propName);
   }
 };
-

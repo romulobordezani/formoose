@@ -8,7 +8,12 @@ import { ErrorHandler } from '@/custom-errors';
  * @returns {boolean}
  */
 export function isEmpty(value, identifier) {
-  if (value === undefined || value === null || value === '' || value.length < 1) {
+  if (
+    value === undefined ||
+    value === null ||
+    value === '' ||
+    value.length < 1
+  ) {
     ErrorHandler.throw(
       `Required field "${identifier}" is empty, sent type '${typeof value}' with value: '${value}' - on field: ${identifier}`,
       identifier,
@@ -17,5 +22,3 @@ export function isEmpty(value, identifier) {
   }
   return true;
 }
-
-

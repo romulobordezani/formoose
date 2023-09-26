@@ -11,12 +11,10 @@ import { isString } from '../isString';
  */
 export function maxLength(value: any, size: number, identifier: string) {
   const stringHelper = String(value);
-  
+
   if (isString(value, identifier) && stringHelper.length > size) {
     ErrorHandler.throw(
-      `String exceed the size of ${size} characters with ${
-        stringHelper.length
-      } - on field: ${identifier}`,
+      `String exceed the size of ${size} characters with ${stringHelper.length} - on field: ${identifier}`,
       identifier,
       'error00007',
       { value, size, length: value.length }
@@ -24,5 +22,3 @@ export function maxLength(value: any, size: number, identifier: string) {
   }
   return true;
 }
-
-

@@ -22,5 +22,3 @@ export function matchEnum(value, enumObject, identifier) {
   }
   return true;
 }
-
-

@@ -20,6 +20,6 @@ export function setValue(
         ...formState[field],
         value
       }
-    }
+    };
   });
 }

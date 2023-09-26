@@ -8,7 +8,7 @@ import { FormState, StateSetter } from '@/interfaces';
  * @param {string} field
  */
 export function cleanError(stateSetter: StateSetter<FormState>, field: string) {
-  stateSetter(state => ({
+  stateSetter((state) => ({
     ...state,
     [field]: {
       ...state[field],

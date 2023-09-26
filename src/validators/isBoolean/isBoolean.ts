@@ -17,4 +17,3 @@ export function isBoolean(value, identifier) {
   }
   return true;
 }
-

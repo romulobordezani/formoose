@@ -5,10 +5,9 @@ import { minLength } from '../../validators';
  * @category Validators
  * @param {checkerData} checkerData
  */
-export const MinLengthChecker = checkerData => {
+export const MinLengthChecker = (checkerData) => {
   const { value, propsOnSchema = {}, propName } = checkerData;
   if (propsOnSchema.min) {
     minLength(value, propsOnSchema.min, propName);
   }
 };
-

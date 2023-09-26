@@ -16,10 +16,7 @@ export const schemaMock = {
 describe('[ BELONG TO SCHEMA ]', () => {
   describe('[ All Good with expected Props ]', () => {
     it('Returns true with only expected props on the schema', () => {
-      const expectedPropsOnSchema = [
-        'prop1',
-        'prop2'
-      ];
+      const expectedPropsOnSchema = ['prop1', 'prop2'];
       expect(
         checkIfBelongsToSchema(expectedPropsOnSchema, schemaMock)
       ).toBeTruthy();
@@ -28,9 +25,7 @@ describe('[ BELONG TO SCHEMA ]', () => {
 
   describe('[ Unexpected Props ]', () => {
     it('Shall Throw Error when sent an unexpected property', () => {
-      const unexpectedPropsOnSchema = [
-        'prop3'
-      ];
+      const unexpectedPropsOnSchema = ['prop3'];
       expect(() => {
         checkIfBelongsToSchema(unexpectedPropsOnSchema, schemaMock);
       }).toThrow(new Error(`${unexpectedPropsOnSchema} not found on Schema.`));

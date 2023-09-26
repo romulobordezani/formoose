@@ -8,12 +8,20 @@ describe('[ isEmpty ]', () => {
   it('Check null detection', () => {
     expect(() => {
       isEmpty(null, 'test-is-empty');
-    }).toThrow(new Error("Required field \"test-is-empty\" is empty, sent type 'object' with value: 'null' - on field: test-is-empty"));
+    }).toThrow(
+      new Error(
+        "Required field \"test-is-empty\" is empty, sent type 'object' with value: 'null' - on field: test-is-empty"
+      )
+    );
   });
 
   it('Check undefined detection', () => {
     expect(() => {
       isEmpty(undefined, 'test-is-empty');
-    }).toThrow(new Error("Required field \"test-is-empty\" is empty, sent type 'undefined' with value: 'undefined' - on field: test-is-empty"));
+    }).toThrow(
+      new Error(
+        "Required field \"test-is-empty\" is empty, sent type 'undefined' with value: 'undefined' - on field: test-is-empty"
+      )
+    );
   });
 });

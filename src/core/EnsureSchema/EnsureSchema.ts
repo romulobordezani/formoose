@@ -13,18 +13,22 @@ import { ICheckerData } from 'src/interfaces/IChekerData';
  * @param {ICheckerData} checkerData
  * @returns {boolean|null|CustomError}
  */
-export const EnsureSchema = (checkerData: ICheckerData): boolean | null | CustomError => {
+export const EnsureSchema = (
+  checkerData: ICheckerData
+): boolean | null | CustomError => {
   const { required } = checkerData.propsOnSchema;
   const { value } = checkerData;
-  const validationNotNeeded = !required && (value === undefined || value === '' || value === null);
+  const validationNotNeeded =
+    !required && (value === undefined || value === '' || value === null);
 
   if (validationNotNeeded) {
     return null;
   }
 
   for (const prop in checkerData.propsOnSchema) {
-    if (Object.prototype.hasOwnProperty.call(checkerData?.propsOnSchema, prop)) {
-
+    if (
+      Object.prototype.hasOwnProperty.call(checkerData?.propsOnSchema, prop)
+    ) {
       if (prop === 'type') {
         // Trows an error if value's type and Schema's type doesn't matches
         TypeChecker(checkerData);
@@ -59,4 +63,3 @@ export const EnsureSchema = (checkerData: ICheckerData): boolean | null | Custom
 
   return true;
 };
-

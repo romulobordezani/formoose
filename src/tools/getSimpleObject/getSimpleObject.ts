@@ -1,4 +1,4 @@
-import { FormState} from '@/interfaces';
+import { FormState } from '@/interfaces';
 
 /**
  * Usually an IFormData contains complex objects to each field, with error, value and message
@@ -9,14 +9,16 @@ import { FormState} from '@/interfaces';
  */
 function getSimpleObject(
   formData: FormState,
-  fieldsToSkip: string[]|null = null,
+  fieldsToSkip: string[] | null = null,
   getEmptyValuesToo: boolean = false
 ) {
   const objectAdapter = {};
   const allFieldNames = Object.keys(formData);
 
   allFieldNames.map((fieldName: string) => {
-    const fieldHasAnyValue = (formData[fieldName].value !== '' && formData[fieldName].value !== undefined);
+    const fieldHasAnyValue =
+      formData[fieldName].value !== '' &&
+      formData[fieldName].value !== undefined;
     if (getEmptyValuesToo || fieldHasAnyValue) {
       objectAdapter[fieldName] = formData[fieldName].value;
     }

@@ -1,4 +1,4 @@
-import { FormState, IModel } from "../../interfaces";
+import { FormState, IModel } from '../../interfaces';
 
 /**
  * Updates all form data based on an User
@@ -8,13 +8,10 @@ import { FormState, IModel } from "../../interfaces";
  * @param {IModel} model User Model Abstraction
  * @returns {void}
  */
-function updateFormDataValues(
-  formData: FormState,
-  model: IModel
-) {
+function updateFormDataValues(formData: FormState, model: IModel) {
   const objectAdapter = {};
 
-  Object.keys(model).map(key => {
+  Object.keys(model).map((key) => {
     objectAdapter[key] = { value: model[key] };
   });
 
