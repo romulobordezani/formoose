@@ -19,7 +19,7 @@
   "scripts": {
     "ts-types": "tsc",
     "dev": "rimraf dist && rollup -c --watch",
-    "build:rollup": "rollup -c",
+    "build": "rollup -c",
     "test": "jest",
     "start": "rimraf dist && rollup -c",
     "prepare": "echo \"package prepared\"",
