@@ -1,7 +1,7 @@
 import { FormState } from '@/interfaces';
 
 /**
- * Usually an IFormData contains complex objects to each field, with error, value and message
+ * Usually an FormState contains complex objects to each field, with error, value and message
  * This method returns a simpler object, with keys and values only
  * @param {FormState} formData
  * @param {string[]} fieldsToSkip The list of field to remove from result

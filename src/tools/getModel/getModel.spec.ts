@@ -1,11 +1,12 @@
 import { setValue, getModel } from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
+import { assign } from 'lodash';
 
 describe('[ TOOLS ][ getModel ]', () => {
   let formData;
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formData = assign({}, formDataMock);
   });
 
   it('Returns a valid Model from formData', () => {

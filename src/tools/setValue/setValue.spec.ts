@@ -1,11 +1,12 @@
 import { setValue } from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
+import { assign } from 'lodash';
 
 describe('[ TOOLS ][ setValue ]', () => {
   let formData;
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formData = assign({}, formDataMock);
   });
 
   it('Removes any error in a formData field 1', () => {

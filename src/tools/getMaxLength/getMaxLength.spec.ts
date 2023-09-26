@@ -1,11 +1,12 @@
 import { getMaxLength } from '../index';
 import { formDataMock, schema } from '../../__mocks__';
+import { assign } from 'lodash';
 
-describe('[ TOOLS ][ getMaxLength ]', () => {
+describe('[ TOOLS ][ getMaxLength() ]', () => {
   let formData;
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formData = assign({}, formDataMock);
   });
 
   it('Returns a number with Max Length', () => {

@@ -1,4 +1,4 @@
-import { IModel } from '@/interfaces';
+import { FormState, IModel } from '@/interfaces';
 
 /**
  * Tranform a simple object, usually passed in json requests, in a form object
@@ -6,12 +6,12 @@ import { IModel } from '@/interfaces';
  * @alias validate/updateFormDataValues
  * @param formData All fields state from component
  * @param {IModel} model User Model Abstraction
- * @returns {IFormData}
+ * @returns {FormState}
  */
-function convertModelToForm(model: IModel) {
-  const objectAdapter = {};
+function convertModelToForm(model: IModel): FormState {
+  const objectAdapter: FormState = {};
 
-  Object.keys(model).map((key) => {
+  Object.keys(model).forEach((key: string) => {
     objectAdapter[key] = {
       error: null,
       message: null,

@@ -1,3 +1,4 @@
+import { assign } from 'lodash';
 import { getModel } from '../getModel';
 import { cleanError } from '../cleanError';
 import { setError } from '../setError';
@@ -22,10 +23,10 @@ function validateAllFieldsSync(
   t: any
 ) {
   return new Promise((resolve, reject) => {
-    const fakeFormData = Object.assign({}, formData);
+    const fakeFormData = assign({}, formData);
 
     const fakeSetFormData = (fakeState) => {
-      Object.assign(fakeFormData, fakeState(fakeFormData));
+      assign(fakeFormData, fakeState(fakeFormData));
       return fakeFormData;
     };
 

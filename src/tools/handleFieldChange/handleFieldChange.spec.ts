@@ -1,11 +1,12 @@
 import { handleFieldChange, getModel } from '../index';
 import { formDataMock, eventMock, curryStateSetter } from '../../__mocks__';
+import { assign } from 'lodash';
 
 describe('[ TOOLS ][ handleFieldChange ]', () => {
   let formData;
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formData = assign({}, formDataMock);
   });
 
   it('Feed formData with values from Dom events', () => {

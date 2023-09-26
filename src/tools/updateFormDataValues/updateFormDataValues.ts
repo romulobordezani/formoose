@@ -1,4 +1,5 @@
 import { FormState, IModel } from '../../interfaces';
+import { assign } from 'lodash';
 
 /**
  * Updates all form data based on an User
@@ -15,7 +16,7 @@ function updateFormDataValues(formData: FormState, model: IModel) {
     objectAdapter[key] = { value: model[key] };
   });
 
-  Object.assign(formData, objectAdapter);
+  assign(formData, objectAdapter);
 }
 
 export default updateFormDataValues;

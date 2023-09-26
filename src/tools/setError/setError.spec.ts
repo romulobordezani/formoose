@@ -1,12 +1,13 @@
 import { setError } from '@/tools';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
 import { CustomError } from '@/custom-errors';
+import { assign } from 'lodash';
 
 describe('[ TOOLS ][ setError() ]', () => {
   let formData;
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formData = assign({}, formDataMock);
   });
 
   it('Sets an error as true in the formData model', () => {
