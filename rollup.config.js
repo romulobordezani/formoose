@@ -7,15 +7,13 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: [
-    './src/index.ts',
-  ],
+  input: ['./src/index.ts'],
   output: {
     dir: 'dist',
     format: 'esm',
-    preserveModules: true,  
+    preserveModules: true,
     preserveModulesRoot: 'src',
-    sourcemap: true,
+    sourcemap: true
   },
   plugins: [
     peerDeps(),
@@ -26,8 +24,9 @@ export default {
       declaration: true,
       declarationDir: 'dist',
       exclude: [
-        "src/**/{test,__tests__}/**/*.{ts,tsx}",
-        "src/**/?(*.)(spec|test).{ts,tsx}"]
+        'src/**/{test,__tests__}/**/*.{ts,tsx}',
+        'src/**/?(*.)(spec|test).{ts,tsx}'
+      ]
     }),
     postcss({
       plugins: []
@@ -35,7 +34,7 @@ export default {
     terser(),
     visualizer({
       filename: 'bundle-analysis.html',
-      open: false,
+      open: false
     })
-  ],
+  ]
 };

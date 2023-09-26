@@ -93,10 +93,10 @@ Examples available at [https://github.com/romulobordezani/formoose-example](http
 #### Contributing:
 Fell free to fork and submit changes and improvements, also please let me know if you find any [issues](https://github.com/romulobordezani/formoose/issues).
 
-Also, I got a road-map, help wanted 😊
+Also, feel free to collaborate with the following road map.
 
 * Flavor to use GraphQl schemas instead of Mongoose Schemas
-* Support casting to transform automatically convertible Types like strings in Dates, Numbers in Strings, etc. 
+* Support casting to transform automatically convertible Types like strings in Dates, Numbers in Strings, etc.
 * Support Schemas parenting and inheritance
 * Support touched, pristine and dirty states natively within the Field Interface
 * Support type inference
@@ -104,16 +104,20 @@ Also, I got a road-map, help wanted 😊
  
 
 #### Running the core project
+
+Install dependencies.
 ```shell
 yarn
 ```
+
 
 ```shell
 yarn start
 ```
 
+
 ```shell
 yarn run test
 ```
 
-Type Script will compile to `dist` folder, use `npm link` within the example repository to run and debug your changes.
+Type Script will compile to `dist` folder, use `npm link` within the [example repository](https://github.com/romulobordezani/formoose-examples) to run and debug your changes.
