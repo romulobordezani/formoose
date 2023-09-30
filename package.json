@@ -53,7 +53,7 @@
   "bugs": {
     "url": "https://github.com/romulobordezani/formoose/issues"
   },
-  "homepage": "https://github.com/romulobordezani/formoose#readme",
+  "homepage": "https://romulobordezani.github.io/formoose/",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.2.1",
