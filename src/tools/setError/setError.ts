@@ -1,29 +1,26 @@
 /**
  * Shared Method to Set an error in a specific Field
- * @category Utils
- * @alias validate/setError
+ * @category Tools
  * @param {StateSetter} stateSetter
- * @param {string} field - The field to set the error
- * @param error - <ICustomError> The error object coming from Validators
- * @param {(any)} translation i18n t function
+ * @param {string} fieldName The field to set the error
+ * @param {FormooseError} error The error object coming from Validators
+ * @param {FormooseTFunction} translation i18n t function
  */
-import { ICustomError, FormState, StateSetter } from '@/interfaces';
+import { CustomError, FormState, StateSetter } from 'src/models';
+import { FormooseTFunction } from 'src/models/I18nTypes';
 
 export function setError(
   stateSetter: StateSetter<FormState>,
-  field: string,
-  error: ICustomError,
-  translation: any
+  fieldName: string,
+  error: CustomError,
+  t: FormooseTFunction
 ) {
   stateSetter((state: FormState) => ({
     ...state,
-    [field]: {
-      ...state[field],
+    [fieldName]: {
+      ...state[fieldName],
       error,
-      message: translation(
-        error?.translatedMessageId,
-        error?.translatedMessageLocals
-      )
+      message: t(error?.translatedMessageKey, error?.translatedMessageInterpolators)
     }
   }));
 }

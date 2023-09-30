@@ -1,62 +1,50 @@
-import { CustomError } from '@/custom-errors';
 import { CustomValidate } from '../CustomValidate';
 import { EnumChecker } from '../EnumChecker';
 import { MaxLengthChecker } from '../MaxLengthChecker';
 import { MinLengthChecker } from '../MinLengthChecker';
 import { RequiredChecker } from '../RequiredChecker';
 import { TypeChecker } from '../TypeChecker';
-import { ICheckerData } from 'src/interfaces/IChekerData';
+import { DataChecker } from 'src/models/DataChecker';
 
 /**
- * Ensure Schema Validation - Runs all validations needed to ensure the whole schema
+ * @description Runs all validations needed to ensure the whole schema
  * @category Validators
- * @param {ICheckerData} checkerData
- * @returns {boolean|null|CustomError}
+ * @throws FormooseError
+ * @returns {boolean}
  */
-export const EnsureSchema = (
-  checkerData: ICheckerData
-): boolean | null | CustomError => {
-  const { required } = checkerData.propsOnSchema;
-  const { value } = checkerData;
-  const validationNotNeeded =
-    !required && (value === undefined || value === '' || value === null);
+export const EnsureSchema = (dataChecker: DataChecker): boolean | null => {
+  const { required } = dataChecker.schemaItem;
+  const { fieldValue } = dataChecker;
+  const validationNotNeeded = !required && (fieldValue === undefined || fieldValue === '' || fieldValue === null);
 
   if (validationNotNeeded) {
     return null;
   }
 
-  for (const prop in checkerData.propsOnSchema) {
-    if (
-      Object.prototype.hasOwnProperty.call(checkerData?.propsOnSchema, prop)
-    ) {
+  for (const prop in dataChecker.schemaItem) {
+    if (Object.prototype.hasOwnProperty.call(dataChecker?.schemaItem, prop)) {
       if (prop === 'type') {
-        // Trows an error if value's type and Schema's type doesn't matches
-        TypeChecker(checkerData);
+        TypeChecker(dataChecker);
       }
 
       if (prop === 'required') {
-        // Trows an error if Required Prop is Empty
-        RequiredChecker(checkerData);
+        RequiredChecker(dataChecker);
       }
 
       if (prop === 'min') {
-        // Trows an error if value doesn't have minimum Length
-        MinLengthChecker(checkerData);
+        MinLengthChecker(dataChecker);
       }
 
       if (prop === 'max') {
-        // Trows an error if value exceeds maximum Length
-        MaxLengthChecker(checkerData);
+        MaxLengthChecker(dataChecker);
       }
 
       if (prop === 'validate') {
-        // Trows an error if value doesn't matches Schema Regex
-        CustomValidate(checkerData);
+        CustomValidate(dataChecker);
       }
 
       if (prop === 'enum') {
-        // Trows an error if value doesn't matches Enumerable
-        EnumChecker(checkerData);
+        EnumChecker(dataChecker);
       }
     }
   }

@@ -1,27 +1,19 @@
 import schema from './runner/schema';
-import { mountFormData } from '../tools';
-import { FormState, StateSetter } from '../interfaces';
+import { mountFormState } from '../tools';
+import { FormState } from '../models';
+import { assign } from 'lodash';
 
 /**
  * Encapsulates formData with a curry call, simulating a React Hook setState
  * @param {FormState} formData
  */
-export const curryStateSetter_2: StateSetter<FormState> =
-  (formData: FormState) => (prevState: (arg0: FormState) => FormState) => {
-    if (typeof prevState === 'object') {
-      return Object.assign(formData, prevState);
-    }
-
-    return Object.assign(formData, prevState(formData));
-  };
-
 export const curryStateSetter = (formData: FormState) => (state) => {
   if (typeof state === 'object') {
-    Object.assign(formData, state);
+    assign(formData, state);
     return formData;
   }
 
-  Object.assign(formData, state(formData));
+  assign(formData, state(formData));
   return formData;
 };
 
@@ -32,4 +24,4 @@ export const eventMock = {
   }
 };
 
-export const formDataMock = mountFormData(schema());
+export const formDataMock = mountFormState(schema());

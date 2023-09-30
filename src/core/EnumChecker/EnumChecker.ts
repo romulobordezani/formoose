@@ -1,13 +1,15 @@
+import { DataChecker } from 'src/models/DataChecker';
 import { matchEnum } from '../../validators';
 
 /**
- * Enum Checker - Checks if the value is one of the possible values listed on Enum
+ * @description Checks if the value is one of the possible values listed on Enum
  * @category Validators
- * @param {checkerData} checkerData
+ * @throws FormooseError
  */
-export const EnumChecker = (checkerData) => {
-  const { value, propsOnSchema = {}, propName } = checkerData;
-  if (propsOnSchema.enum) {
-    matchEnum(value, propsOnSchema.enum, propName);
+export const EnumChecker = (dataChecker: DataChecker) => {
+  const { fieldValue, schemaItem, fieldName } = dataChecker;
+
+  if (schemaItem?.enum) {
+    matchEnum(fieldValue, schemaItem.enum, fieldName);
   }
 };

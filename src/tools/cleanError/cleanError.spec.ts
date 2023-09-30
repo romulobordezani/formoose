@@ -1,17 +1,18 @@
 import { setError, cleanError } from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
-import { CustomError } from '@/custom-errors';
-import { FormState } from '../../interfaces';
+import { FormooseError } from '@/custom-errors';
+import { FormState } from '../../models';
+import { assign } from 'lodash';
 
 describe('cleanError()', () => {
   let formState: FormState;
 
   beforeEach(() => {
-    formState = Object.assign({}, formDataMock);
+    formState = assign({}, formDataMock);
   });
 
   it('Removes any error in a formData', () => {
-    const fakeError = new CustomError('Fake Error');
+    const fakeError = new FormooseError('Fake Error');
 
     setError(curryStateSetter(formState), 'field1', fakeError, () => null);
 

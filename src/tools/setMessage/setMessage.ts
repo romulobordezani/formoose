@@ -1,18 +1,14 @@
-import { FormState, StateSetter } from '@/interfaces';
+import { FormState, StateSetter } from 'src/models';
 
 /**
  * Shared Method to Set a message in a specific Field
- * @category Utils
- * @alias validate/setMessage
+ * @category Tools
+ * @alias tools/setMessage
  * @param {stateSetter} stateSetter
  * @param {string} field - The field to set the error
  * @param {string} message
  */
-function setMessage(
-  stateSetter: StateSetter<FormState>,
-  field: string,
-  message: string
-) {
+function setMessage(stateSetter: StateSetter<FormState>, field: string, message: string) {
   stateSetter((state) => ({
     ...state,
     [field]: {

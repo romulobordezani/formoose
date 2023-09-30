@@ -1,18 +1,18 @@
-import { ErrorHandler } from '@/custom-errors';
+import { ErrorCodes, ErrorHandler } from '@/custom-errors';
 
 /**
  * @category Validators
- * @param {string} value Value to be validated
- * @param {string} identifier Form Field where error happened
- * @throws {CustomError} Throws Exception when invalid
- * @returns {boolean}
+ * @param {string} fieldValue Value to be validated
+ * @param {string} fieldName Field name of where error happened
+ * @throws {FormooseError} Throws Exception when invalid
  */
-export function isArray(value, identifier) {
-  if (!Array.isArray(value)) {
+export function isArray(fieldValue: any, fieldName: string): boolean {
+  if (!Array.isArray(fieldValue)) {
     ErrorHandler.throw(
-      `Array expected, type sent: ${typeof value} - on field: ${identifier}`,
-      identifier,
-      'error00009'
+      `Array expected, type sent: ${typeof fieldValue} - on field: ${fieldName}`,
+      fieldName,
+      ErrorCodes['is-not-an-array'],
+      { fieldName, fieldValue }
     );
   }
   return true;

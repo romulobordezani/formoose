@@ -1,16 +1,18 @@
 import { setValue, getModel } from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
+import { assign } from 'lodash';
+import { FormState } from '@/models';
 
-describe('[ TOOLS ][ getModel ]', () => {
-  let formData;
+describe('[ TOOLS ][ getModel() ]', () => {
+  let formState: FormState;
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formState = assign({}, formDataMock);
   });
 
   it('Returns a valid Model from formData', () => {
     const finalValue = 'fresh value';
-    setValue(curryStateSetter(formData), 'field1', finalValue);
-    expect(getModel(formData, 'field1')).toEqual({ field1: finalValue });
+    setValue(curryStateSetter(formState), 'field1', finalValue);
+    expect(getModel(formState, 'field1')).toEqual({ field1: finalValue });
   });
 });

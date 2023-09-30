@@ -1,35 +1,30 @@
 import { setValue } from '../setValue';
-import { FormState, StateSetter } from '@/interfaces';
+import { FormState, StateSetter } from 'src/models';
 
 /**
  * Shared Method to manipulate FieldChanges
- * @alias validate/handleFieldChange
- * @category Utils
+ * @alias tools/handleFieldChange
+ * @category Tools
  * @param {any} event Dom event
  * @param {stateSetter} stateSetter
- * @param {string} field - The field to be validated
+ * @param {string} fieldName - The field to be validated
  */
-export async function handleFieldChange(
-  event: any,
-  field: string,
-  stateSetter: StateSetter<FormState>
-) {
-  event.persist();
+export function handleFieldChange(event: any, fieldName: string, stateSetter: StateSetter<FormState>): void {
   const { target } = event;
   const { type } = target;
-  let value = null;
+  let fieldValue = null;
 
   switch (type) {
     case 'radio':
-      value = target.value;
+      fieldValue = target.value;
       break;
     case 'checkbox':
-      value = target.checked;
+      fieldValue = target.checked;
       break;
     default:
-      value = target.value;
+      fieldValue = target.value;
       break;
   }
 
-  await setValue(stateSetter, field, value);
+  setValue(stateSetter, fieldName, fieldValue);
 }

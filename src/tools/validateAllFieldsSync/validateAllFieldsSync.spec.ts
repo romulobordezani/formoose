@@ -1,12 +1,13 @@
-import { mountFormData, setValue, validateAllFieldsSync } from '../index';
+import { mountFormState, setValue, validateAllFieldsSync } from '../index';
 import { curryStateSetter, schema } from '../../__mocks__';
+import { ErrorCodes } from '@/custom-errors';
 
 describe('[ TOOLS ][ validateAllFieldsSync ]', () => {
   let formData;
   let validationResponse;
 
   beforeEach(async () => {
-    formData = mountFormData(schema());
+    formData = mountFormState(schema());
     validationResponse = null;
   });
 
@@ -19,11 +20,11 @@ describe('[ TOOLS ][ validateAllFieldsSync ]', () => {
         schema(),
         formData,
         curryStateSetter(formData),
-        (translatedMessageId) => translatedMessageId
+        (translatedMessageKey: string) => translatedMessageKey
       );
     } catch (e: any) {
       expect(formData.firstName.error).toBeTruthy();
-      expect(formData.firstName.message).toBe('error00001');
+      expect(formData.firstName.message).toBe(ErrorCodes['alphabetical-chars-only']);
       expect(e.message).toBe('Invalid Form');
       expect(validationResponse).toBeFalsy();
     }
@@ -39,7 +40,7 @@ describe('[ TOOLS ][ validateAllFieldsSync ]', () => {
       schema(),
       formData,
       curryStateSetter(formData),
-      (translatedMessageId) => translatedMessageId
+      (translatedMessageKey: string) => translatedMessageKey
     );
 
     expect(formData.firstName.error).toBeNull();

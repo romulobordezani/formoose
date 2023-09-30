@@ -1,28 +1,21 @@
-import { CustomError } from '../CustomError';
+import { ErrorCodes } from '../ErrorCodes';
+import { FormooseError } from '../FormooseError';
 
 /**
- * @category Utils
+ * @category Custom Errors
+ * @throws FormooseError
  */
 export class ErrorHandler {
   /**
    * Throws a Custom Error to be used on fields and validation process
-   * @param {string} message
-   * @param {string} field
-   * @param {string} translatedMessageId
-   * @param {Object} translatedMessageLocals
-   * @throws {CustomError}
+   * @throws {FormooseError}
    */
   public static throw(
     message: string,
-    field?: string,
-    translatedMessageId?: string,
-    translatedMessageLocals = {}
+    fieldName?: string,
+    translatedMessageKey?: ErrorCodes | string,
+    translatedMessageInterpolators = {}
   ): never {
-    throw new CustomError(
-      message,
-      field,
-      translatedMessageId,
-      translatedMessageLocals
-    );
+    throw new FormooseError(message, fieldName, translatedMessageKey, translatedMessageInterpolators);
   }
 }

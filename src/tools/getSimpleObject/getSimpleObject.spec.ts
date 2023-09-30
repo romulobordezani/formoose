@@ -1,12 +1,13 @@
 import { setValue, getSimpleObject } from '../index';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
+import { assign } from 'lodash';
 
 describe('[ TOOLS ][ getSimpleObject ]', () => {
   let formData;
   const finalValue = 'final value';
 
   beforeEach(() => {
-    formData = Object.assign({}, formDataMock);
+    formData = assign({}, formDataMock);
     setValue(curryStateSetter(formData), 'firstName', finalValue);
     setValue(curryStateSetter(formData), 'lastName', finalValue);
     setValue(curryStateSetter(formData), 'middleName', '');

@@ -1,7 +1,7 @@
-import { FormState } from '@/interfaces';
+import { FormState } from '@/models';
 
-export function getModel(formData: FormState, field: string) {
+export function getModel(formState: FormState, fieldName: string): Record<string, string> {
   return {
-    [field]: formData[field].value
+    [fieldName]: formState[fieldName].value
   };
 }
