@@ -1,4 +1,4 @@
-import { FormState } from '@/interfaces';
+import { FormState } from 'src/models';
 
 /**
  * Usually an FormState contains complex objects to each field, with error, value and message
@@ -16,9 +16,7 @@ function getSimpleObject(
   const allFieldNames = Object.keys(formData);
 
   allFieldNames.map((fieldName: string) => {
-    const fieldHasAnyValue =
-      formData[fieldName].value !== '' &&
-      formData[fieldName].value !== undefined;
+    const fieldHasAnyValue = formData[fieldName].value !== '' && formData[fieldName].value !== undefined;
     if (getEmptyValuesToo || fieldHasAnyValue) {
       objectAdapter[fieldName] = formData[fieldName].value;
     }

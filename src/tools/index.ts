@@ -10,7 +10,7 @@ import { getModel } from './getModel';
 import getMaxLength from './getMaxLength/getMaxLength';
 import updateFormDataValues from './updateFormDataValues/updateFormDataValues';
 import getSimpleObject from './getSimpleObject/getSimpleObject';
-import { mountFormData } from './mountFormData';
+import { mountFormState } from './mountFormState';
 
 export {
   cleanError,
@@ -21,7 +21,7 @@ export {
   handleFieldChange,
   getModel,
   getMaxLength,
-  mountFormData,
+  mountFormState,
   updateFormDataValues,
   getSimpleObject,
   validateAllFieldsSync,

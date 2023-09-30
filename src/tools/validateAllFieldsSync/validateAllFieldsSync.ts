@@ -4,24 +4,25 @@ import { cleanError } from '../cleanError';
 import { setError } from '../setError';
 
 import { Validate } from '@/core';
-import { ISchema, FormState, StateSetter } from '../../interfaces';
+import { Schema, FormState, StateSetter } from '../../models';
+import { FormooseTFunction } from '@/models';
 
 /**
  * Shared Method To validateAllFieldsSync Fields in a Form, returning if all them are valid or not
- * @category Utils
- * @alias validate/validateAll
+ * @category Tools
+ * @alias tools/validateAll
  * @param schema
  * @param formData - All fields state from component
  * @param {Function} stateSetter
- * @param {function} t i18n get translation method
+ * @param {FormooseTFunction} t i18n get translation method
  * @returns {Promise<any>}
  */
 function validateAllFieldsSync(
-  schema: ISchema,
+  schema: Schema,
   formData: FormState,
   stateSetter: StateSetter<FormState>,
-  t: any
-) {
+  t: FormooseTFunction
+): Promise<boolean> {
   return new Promise((resolve, reject) => {
     const fakeFormData = assign({}, formData);
 

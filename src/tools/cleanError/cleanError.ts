@@ -1,9 +1,9 @@
-import { FormState, StateSetter } from '@/interfaces';
+import { FormState, StateSetter } from 'src/models';
 
 /**
  * Shared Method to Clean Errors in a specific Field of a Data Form integrated with domains
- * @category Utils
- * @alias validate/cleanError
+ * @category Tools
+ * @alias tools/cleanError
  * @param {StateSetter} stateSetter
  * @param {string} field
  */

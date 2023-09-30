@@ -6,7 +6,7 @@
       "@/core": ["src/core"],
       "@/tools": ["src/tools"],
       "@/validators": ["src/validators"],
-      "@/interfaces": ["src/interfaces"],
+      "@/models": ["src/models"],
       "@/custom-errors": ["src/custom-errors"]
     },
     "outDir": "dist",
@@ -27,7 +27,8 @@
     ],
     "declaration": true,
     "strict": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsx": "react"
   },
   "compileOnSave": true,
   "include": [

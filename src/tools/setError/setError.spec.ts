@@ -1,6 +1,6 @@
 import { setError } from '@/tools';
 import { formDataMock, curryStateSetter } from '../../__mocks__';
-import { CustomError } from '@/custom-errors';
+import { ErrorCodes, FormooseError } from '@/custom-errors';
 import { assign } from 'lodash';
 
 describe('[ TOOLS ][ setError() ]', () => {
@@ -11,18 +11,13 @@ describe('[ TOOLS ][ setError() ]', () => {
   });
 
   it('Sets an error as true in the formData model', () => {
-    const fakeError = new CustomError('Fake Error', 'field1', 'got an error');
+    const fakeError = new FormooseError('Fake Error', 'field1', ErrorCodes['is-not-a-boolean']);
 
-    setError(
-      curryStateSetter(formData),
-      'field1',
-      fakeError,
-      (translatedMessageId) => translatedMessageId
-    );
+    setError(curryStateSetter(formData), 'field1', fakeError, (translatedMessageKey: string) => translatedMessageKey);
 
     expect(formData.field1).toMatchObject({
       error: fakeError,
-      message: 'got an error'
+      message: ErrorCodes['is-not-a-boolean']
     });
   });
 });

@@ -1,13 +1,14 @@
+import { DataChecker } from '@/models';
 import { isEmpty } from '@/validators';
 
 /**
- * Checks if required value is fulfilled
+ * @description  Checks if required value is fulfilled
  * @category Validators
- * @param {checkerData} checkerData
  */
-export const RequiredChecker = (checkerData) => {
-  const { value, propsOnSchema = {}, propName } = checkerData;
-  if (propsOnSchema.required) {
-    isEmpty(value, propName);
+export const RequiredChecker = (dataChecker: DataChecker) => {
+  const { fieldValue, schemaItem, fieldName } = dataChecker;
+
+  if (schemaItem?.required) {
+    isEmpty(fieldValue, fieldName);
   }
 };

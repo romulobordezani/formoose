@@ -1,6 +1,8 @@
+import { SupportedTypesEnum } from '@/models';
 import { isString, isNumber, isBoolean, isArray } from '@/validators';
+import { DataChecker } from 'src/models/DataChecker';
 
-export const getTypeValidator = (primitiveTypeName) => {
+export const getTypeValidator = (primitiveTypeName: SupportedTypesEnum) => {
   const types = {
     Array: isArray,
     Boolean: isBoolean,
@@ -12,11 +14,12 @@ export const getTypeValidator = (primitiveTypeName) => {
   return types[primitiveTypeName] || types.default;
 };
 
-export const TypeChecker = (checkerData: {
-  value: any;
-  propsOnSchema: any;
-  propName: any;
-}) => {
-  const { value, propsOnSchema, propName } = checkerData;
-  getTypeValidator(propsOnSchema.type.name)(value, propName);
+/**
+ * @description Checks if type is supported
+ * @category Validators
+ */
+export const TypeChecker = (dataChecker: DataChecker) => {
+  const { fieldValue, schemaItem, fieldName } = dataChecker;
+
+  getTypeValidator(schemaItem.type)(fieldValue, fieldName);
 };

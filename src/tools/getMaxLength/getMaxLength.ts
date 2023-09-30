@@ -1,16 +1,10 @@
-import { FormState, ISchema } from '@/interfaces';
+import { Schema } from 'src/models';
 
 /**
- * A tool to get MaxLength info from a schema
- * @category Utils
- * @alias validate/getMaxLength
- * @param formData
- * @param field
- * @param schema
- * @returns {Object} - Simulation of model
+ * @category Tools
  */
-function getMaxLength(formData: FormState, field: string, schema: ISchema) {
-  return schema[field].max;
+function getMaxLength(fieldName: string, schema: Schema) {
+  return schema[fieldName]?.max;
 }
 
 export default getMaxLength;

@@ -1,18 +1,20 @@
+import { ErrorCodes } from '@/custom-errors';
 import { ErrorHandler } from '../../custom-errors/ErrorHandler';
 
 /**
  * @category Validators
- * @param {string} value Value to be validated
- * @param {string} identifier Form Field where error happened
- * @throws {CustomError} Throws Exception when invalid
+ * @param {string} fieldValue Value to be validated
+ * @param {string} fieldName Form Field where error happened
+ * @throws {FormooseError} Throws Exception when invalid
  * @returns {boolean}
  */
-export function isString(value: string, identifier: string): boolean {
-  if (typeof value !== 'string') {
+export function isString(fieldValue: string, fieldName: string): boolean {
+  if (typeof fieldValue !== 'string') {
     ErrorHandler.throw(
-      `String expected, type sent: ${typeof value} - on field: ${identifier}`,
-      identifier,
-      'error00001'
+      `String expected, type sent: ${typeof fieldValue} - on field: ${fieldName}`,
+      fieldName,
+      ErrorCodes['alphabetical-chars-only'],
+      { fieldName, fieldValue }
     );
   }
 

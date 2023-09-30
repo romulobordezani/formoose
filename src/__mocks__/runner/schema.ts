@@ -1,34 +1,34 @@
-import { ISchemaGetter, TypesEnum } from '../../interfaces';
+import { SchemaGetter, SupportedTypesEnum } from '../../models';
 
-const schema: ISchemaGetter = () => {
+const schema: SchemaGetter = () => {
   return {
     email: {
       max: 50,
       required: true,
-      type: TypesEnum.String
+      type: SupportedTypesEnum.String
     },
 
     firstName: {
       max: 50,
       min: 2,
       required: true,
-      type: TypesEnum.String
+      type: SupportedTypesEnum.String
     },
 
     id: {
       required: true,
-      type: TypesEnum.String
+      type: SupportedTypesEnum.String
     },
 
     lastName: {
       max: 50,
       required: true,
-      type: TypesEnum.String
+      type: SupportedTypesEnum.String
     },
 
     middleName: {
       max: 50,
-      type: TypesEnum.String
+      type: SupportedTypesEnum.String
     }
   };
 };

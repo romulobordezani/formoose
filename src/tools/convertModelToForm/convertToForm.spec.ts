@@ -1,4 +1,4 @@
-import { FormState } from '@/interfaces';
+import { FormState } from 'src/models';
 import convertModelToForm from './convertModelToForm';
 
 const mockSimpleObject = {

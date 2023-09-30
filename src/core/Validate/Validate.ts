@@ -1,33 +1,27 @@
 import { EnsureSchema } from '../EnsureSchema';
-import { checkIfBelongsToSchema } from '../checkIfBelongsToSchema';
-import { ISchema } from '@/interfaces';
+import { checkIfBelongsToSchema } from '../../tools/checkIfBelongsToSchema';
+import { Schema } from 'src/models';
 
 /**
  * Main validator method, returns a Promise that throws an error
  * when something is invalid according to schema set up, or true when all validations are fine.
+ * @category Validators
  * @param {Object} model the object that represents the model, with key and values to be validated e.g. { name: 'Emmanuel' }
- * @param {string[]} propsToValidate list of model'' properties what will be validated. Props out of this list will be skipped
- * @param {ISchema} schema The Mongoose like schema containing all validations
- * @throws {ICustomError}
- * @constructor
+ * @param {string[]} fieldNames list of fields to be validated
+ * @param {Schema} schema The Mongoose like schema containing all validations
+ * @throws {FormooseError} FormooseError
  */
-export const Validate = (
-  model: any,
-  propsToValidate: string[],
-  schema: ISchema
-) =>
+export const Validate = (model: any, fieldNames: string[], schema: Schema) =>
   new Promise((resolve) => {
-    // Throws an error when detects an unknown prop, not listed in the Schema
-    checkIfBelongsToSchema(propsToValidate, schema);
+    checkIfBelongsToSchema(fieldNames, schema);
 
-    // Iterates the whole list of props, get theirs values from model and applies validations related on schema
-    propsToValidate.map((prop) =>
+    for (let i = 0; i < fieldNames.length; i++) {
       EnsureSchema({
-        propName: prop,
-        propsOnSchema: schema[prop],
-        value: model[prop]
-      })
-    );
+        fieldName: fieldNames[i],
+        schemaItem: schema[fieldNames[i]],
+        fieldValue: model[fieldNames[i]]
+      });
+    }
 
     resolve(true);
   });

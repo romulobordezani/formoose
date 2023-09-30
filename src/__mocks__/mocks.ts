@@ -1,6 +1,6 @@
 import schema from './runner/schema';
-import { mountFormData } from '../tools';
-import { FormState } from '../interfaces';
+import { mountFormState } from '../tools';
+import { FormState } from '../models';
 import { assign } from 'lodash';
 
 /**
@@ -24,4 +24,4 @@ export const eventMock = {
   }
 };
 
-export const formDataMock = mountFormData(schema());
+export const formDataMock = mountFormState(schema());

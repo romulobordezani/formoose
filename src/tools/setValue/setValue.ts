@@ -6,7 +6,7 @@
  * @param {string} field - The field to be validated
  * @param value
  */
-import { FormState, StateSetter } from '@/interfaces';
+import { FormState, StateSetter } from '@/models';
 
 export function setValue(
   stateSetter: StateSetter<FormState>,
