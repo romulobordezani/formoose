@@ -11,9 +11,10 @@
     },
     "outDir": "dist",
     "sourceMap": true,
-    "target": "es6",
-    "module": "esnext",
+    "target": "es2018",
+    "module": "es2015",
     "noImplicitAny": false,
+    "skipLibCheck": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -22,21 +23,29 @@
     "noEmitOnError": true,
     "removeComments": true,
     "lib": [
-      "es2017",
-      "dom"
+      "esnext",
+      "dom",
+      "dom.iterable"
     ],
     "declaration": true,
+    "declarationMap": true,
     "strict": false,
     "resolveJsonModule": true,
-    "jsx": "react"
+    "jsx": "react",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "compileOnSave": true,
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "node_modules/@types"
-  ],
+  "include": ["src"],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/*.test.ts",
+    "src/*.test.tsx",
+    "src/*.test-d.ts",
+    "src/*.test-d.tsx",
+    "src/__mocks__"
   ]
 }

@@ -1,8 +1,6 @@
-import { assign } from 'lodash';
 import { getModel } from '../getModel';
 import { cleanError } from '../cleanError';
 import { setError } from '../setError';
-
 import { Validate } from '@/core';
 import { Schema, FormState, StateSetter } from '../../models';
 import { FormooseTFunction } from '@/models';
@@ -24,10 +22,10 @@ function validateAllFieldsSync(
   t: FormooseTFunction
 ): Promise<boolean> {
   return new Promise((resolve, reject) => {
-    const fakeFormData = assign({}, formData);
+    const fakeFormData = Object.assign({}, formData);
 
     const fakeSetFormData = (fakeState) => {
-      assign(fakeFormData, fakeState(fakeFormData));
+      Object.assign(fakeFormData, fakeState(fakeFormData));
       return fakeFormData;
     };
 

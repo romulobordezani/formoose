@@ -17,7 +17,7 @@ import {
 } from '@/tools';
 import { UseFormooseReturn } from 'src/models/UseFormooseReturn';
 
-let validateAfterAllTimer;
+let validateAfterAllTimer: NodeJS.Timeout | number | null = null;
 
 const getFieldName = (fieldNameOrEvent: ChangeEventOrName) => {
   if (typeof fieldNameOrEvent === 'string') {

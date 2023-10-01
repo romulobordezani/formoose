@@ -1,5 +1,4 @@
 import { FormState, PayloadFormat } from '../../models';
-import { assign } from 'lodash';
 
 /**
  * Updates all form data based on an User
@@ -16,7 +15,7 @@ function updateFormDataValues(formData: FormState, model: PayloadFormat) {
     objectAdapter[key] = { value: model[key] };
   });
 
-  assign(formData, objectAdapter);
+  Object.assign(formData, objectAdapter);
 }
 
 export default updateFormDataValues;
