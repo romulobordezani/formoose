@@ -1,6 +1,6 @@
 {
   "name": "formoose",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0",
   "description": "Schema-based run time validation engine, made to integrate back and front-end validations using Mongoose like schemas.",
   "private": false,
   "source": "src/index.ts",
