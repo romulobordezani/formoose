@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:romulobordezani/formoose.git"
+    "url": "https://github.com/romulobordezani/formoose.git"
   },
   "keywords": [
     "mongoose",
