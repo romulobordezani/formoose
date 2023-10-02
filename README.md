@@ -44,7 +44,7 @@ const schema = () => ({
   }
 });
 
-function FormooseFormExample() {
+function FormooseFormExample({ t }) {
   const {
     formData,
     validateAllFieldsSync,
@@ -82,6 +82,7 @@ function FormooseFormExample() {
 export default FormooseFormExample;
 ```
 
+### Demos 
 Examples available at [https://github.com/romulobordezani/formoose-example](https://github.com/romulobordezani/formoose-example) or at this [sand box](https://codesandbox.io/s/formoose-typescript-qchwm4?file=/src/components/FormooseForm/FormooseForm.tsx)
 
 #### Contributing:
@@ -109,11 +110,11 @@ yarn link formoose
 ```
 Run `yarn start` and the browser should open with some examples using your local Formoose's code. Now you can test and debug your changes.
 
-### Looking for something else? 
+### Looking for something else?
 
 So, you reached the end of this documentation and still think that Formoose is not for you?
 
-No problem! If you aren't interested in using `Mogoose schemas` to control your forms, or `i18n` to provide instant translations to control them, or even in the Type Script definitions to provide you a great Development Experience - in a really small package. So...
+No problem! If you aren't interested in using `Mogoose schemas` to control your forms, or `i18n` to provide instant translations to control them, or even interested in the Type Script definitions to provide you a great Development Experience - all in a really small package. So...
 
 Probably you are looking for something else like:
 
@@ -123,6 +124,6 @@ Probably you are looking for something else like:
 * [joi](https://github.com/hapijs/joi)
 * [superstruct](https://github.com/ianstormtaylor/superstruct)
 
-And to use it with [react-hook-form.com](https://react-hook-form.com/) or [formik](https://formik.org/) 
+And also to use these schema validators with [react-hook-form.com](https://react-hook-form.com/) or [formik](https://formik.org/) 
 
 Hope it helps 🍀.
