@@ -5,7 +5,10 @@
 ![Node.js CI](https://github.com/romulobordezani/formoose/workflows/Node.js%20CI/badge.svg?event=issues)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 [![npm version](https://img.shields.io/npm/v/formoose.svg?style=flat)](https://www.npmjs.com/package/formoose)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+[![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/formoose)](https://bundlephobia.com/package/formoose)
+[![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/formoose)](https://bundlephobia.com/package/formoose)
+[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/formoose)](https://bundlephobia.com/package/formoose)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/romulobordezani/formoose/blob/main/CONTRIBUTING.md)
 <br /><br />
 #### Formoose is a runtime **validation engine**, based on Mongoose's 🐻 schemas.
 
