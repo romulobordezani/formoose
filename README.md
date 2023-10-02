@@ -7,29 +7,30 @@
 [![npm version](https://img.shields.io/npm/v/formoose.svg?style=flat)](https://www.npmjs.com/package/formoose)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 <br /><br />
-#### Mongoose's schema based validation engine, made to integrate back and front-end validations easily and using same schemas
+#### Formoose is a runtime **validation engine**, based on Mongoose's 🐻 schemas.
 
-It **IS NOT** intended to do magic and generate automatically Html forms and fields, styles, and React components.
+Meant to integrate `React Controled Forms` with back-end APIs using [MongoDB](https://www.mongodb.com/).
 
-It **DOES** provide tools to validate the same Mongoose Schema using `React & Hooks` and `Node.js` integrating back and front end validations in the same source.
+It **IS NOT** intended to do magic and generate automatically HTML forms, fields, nor styles, or React components for you.
 
-**Important Note**: 🐻 Mongoose isn't required at all, but the supported schema follows [these guide lines](https://mongoosejs.com/docs/guide.html),
- what is different of [yup](https://github.com/jquense/yup) with its own .js Schemas, and also different of what [ajv](https://ajv.js.org/) does dealing with [json schemas](http://json-schema.org/).
+It **DOES** provide an easy way to parse and validate the same **Mongoose** Schema using `React & Hooks`, integrating back and front-end validations in the same source of truth.
+
+**IMPORTANT Note**: 🐻 [Mongoose](https://mongoosejs.com/) lib isn't required at the front-side at all, you can use any schemas following [these guide lines](https://mongoosejs.com/docs/guide.html), and validate them using [Mongoose built in validators](https://mongoosejs.com/docs/validation.html#built-in-validators) at the back-end side. 
+
 
 
  ### Provides:
-* Easy to use sync/async validations of Mongoose schemas, both in Client Side using `React Hooks` or on server side using `Node.js Promises`.
+* Fast sync/async validations for the whole schema.
 * Validation for single fields
-* Integration with React Hook `useState`, tools available to set up errors, clean, deal with changes etc.
+* Tools to set up errors on specific fields, to clean, deal with changes etc.
 * Friendly and consistent error messages with internationalization support using [react-i18next](https://www.npmjs.com/package/react-i18next). 
-* Configurable Error messages for each type checking
 * Real time validation in forms 
-* Custom validations using simple Java Script functions
+* Custom validations using simple Java Script functions, which allows you to validate whatever you want like Regexes, API based validations, custom logic etc.
 
 
 #### 🚀 Getting started:
 
-Example:
+Basic example:
 
 ```jsx
 import React, { useState } from 'react';
@@ -81,7 +82,7 @@ function FormooseFormExample() {
 export default FormooseFormExample;
 ```
 
-Examples available at [https://github.com/romulobordezani/formoose-example](https://github.com/romulobordezani/formoose-example)
+Examples available at [https://github.com/romulobordezani/formoose-example](https://github.com/romulobordezani/formoose-example) or at this [sand box](https://codesandbox.io/s/formoose-typescript-qchwm4?file=/src/components/FormooseForm/FormooseForm.tsx)
 
 #### Contributing:
 Fell free to fork and submit changes and improvements, also please let me know if you find any [issues](https://github.com/romulobordezani/formoose/issues).
@@ -96,12 +97,32 @@ yarn
 
 
 ```shell
-yarn start
+yarn dev
 ```
 
+Type Script will compile to `dist` folder, use `yarn link`.
+
+Go to the [example repository](https://github.com/romulobordezani/formoose-examples) and run:
 
 ```shell
-yarn run test
+yarn link formoose
 ```
+Run `yarn start` and the browser should open with some examples using your local Formoose's code. Now you can test and debug your changes.
 
-Type Script will compile to `dist` folder, use `npm link` within the [example repository](https://github.com/romulobordezani/formoose-examples) to run and debug your changes.
+### Looking for something else? 
+
+So, you reached the end of these documentation and still thinks that Formoose is not for you?
+
+No problem! If you aren't interested in using `Mogoose schemas` to control your forms, or `i18n` to provide instant translations to your forms, or in the Type Script definitions to provide you a great Development Experience - in a really small package.
+
+Probably you are looking for something else like:
+
+* [zod](https://github.com/colinhacks/zod) 
+* [yup](https://github.com/jquense/yup)  
+* [ajv](https://ajv.js.org/) does dealing with [json schemas](http://json-schema.org/)
+* [joi](https://github.com/hapijs/joi)
+* [superstruct]https://github.com/ianstormtaylor/superstruct
+
+And to use it with [react-hook-form.com](https://react-hook-form.com/) or [formik](https://formik.org/) 
+
+Hope it helps 🍀.
