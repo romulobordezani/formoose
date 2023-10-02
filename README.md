@@ -111,9 +111,9 @@ Run `yarn start` and the browser should open with some examples using your local
 
 ### Looking for something else? 
 
-So, you reached the end of these documentation and still thinks that Formoose is not for you?
+So, you reached the end of this documentation and still think that Formoose is not for you?
 
-No problem! If you aren't interested in using `Mogoose schemas` to control your forms, or `i18n` to provide instant translations to your forms, or in the Type Script definitions to provide you a great Development Experience - in a really small package.
+No problem! If you aren't interested in using `Mogoose schemas` to control your forms, or `i18n` to provide instant translations to control them, or even in the Type Script definitions to provide you a great Development Experience - in a really small package. So...
 
 Probably you are looking for something else like:
 
@@ -121,7 +121,7 @@ Probably you are looking for something else like:
 * [yup](https://github.com/jquense/yup)  
 * [ajv](https://ajv.js.org/) does dealing with [json schemas](http://json-schema.org/)
 * [joi](https://github.com/hapijs/joi)
-* [superstruct]https://github.com/ianstormtaylor/superstruct
+* [superstruct](https://github.com/ianstormtaylor/superstruct)
 
 And to use it with [react-hook-form.com](https://react-hook-form.com/) or [formik](https://formik.org/) 
 
