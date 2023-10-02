@@ -2,7 +2,6 @@
 
 <br /><br />
 ![Node.js CI](https://github.com/romulobordezani/formoose/workflows/Node.js%20CI/badge.svg)
-![Node.js CI](https://github.com/romulobordezani/formoose/workflows/Node.js%20CI/badge.svg?event=issues)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 [![npm version](https://img.shields.io/npm/v/formoose.svg?style=flat)](https://www.npmjs.com/package/formoose)
 [![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/formoose)](https://bundlephobia.com/package/formoose)
